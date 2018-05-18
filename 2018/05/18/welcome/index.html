@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Windows下Hexo+GitHub环境搭建 安装Node.js- 下载地址：https://nodejs.org/en/ - 可以通过node -v的命令来测试NodeJS是否安装成功  安装Git- 下载地址：https://git-scm.com/ - 去 Git 官网下载相应版本，进行安装即可 注册Github账号- 去 Github 官网进行注册即可 - 注册完之后记得添加 SSH K">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-18T06:22:14.623Z">
+<meta property="og:updated_time" content="2018-05-18T06:25:25.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="welcome">
 <meta name="twitter:description" content="Windows下Hexo+GitHub环境搭建 安装Node.js- 下载地址：https://nodejs.org/en/ - 可以通过node -v的命令来测试NodeJS是否安装成功  安装Git- 下载地址：https://git-scm.com/ - 去 Git 官网下载相应版本，进行安装即可 注册Github账号- 去 Github 官网进行注册即可 - 注册完之后记得添加 SSH K">
@@ -97,17 +97,18 @@
 - 在Git Bash执行代码：ssh-keygen -t rsa -C &quot;email address&quot;
 - 成功后会生成两个文件id_rsa 以及id_rsa.pub
 - 添加id_rsa.pub中的内容到Github的SSH Key中。
-</code></pre><h2 id="部署到Github上"><a href="#部署到Github上" class="headerlink" title="部署到Github上"></a>部署到Github上</h2><pre><code>### 编辑本地Hexo目录下文件_comfig.yml
-- deploy:
+</code></pre><h2 id="部署到Github上"><a href="#部署到Github上" class="headerlink" title="部署到Github上"></a>部署到Github上</h2><h3 id="编辑本地Hexo目录下文件-comfig-yml"><a href="#编辑本地Hexo目录下文件-comfig-yml" class="headerlink" title="编辑本地Hexo目录下文件_comfig.yml"></a>编辑本地Hexo目录下文件_comfig.yml</h3><pre><code>- deploy:
 - type: git
 - repository: https://github.com/Lynn1984/Lynn1984.github.io.git
 - branch: master
 - 说明：repository复制Github中的即可。仓库名=用户名+github.io 必须的，不然会访问失败。
+</code></pre><h3 id="部署命令"><a href="#部署命令" class="headerlink" title="部署命令"></a>部署命令</h3><pre><code>- $ hexo generate
+- $ hexo deploy
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/18/welcome/" data-id="cjhbkv1g70003ocuign7razws" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/18/welcome/" data-id="cjhbkwigf00033cuik2jt8ser" class="article-share-link">Share</a>
       
       
     </footer>
