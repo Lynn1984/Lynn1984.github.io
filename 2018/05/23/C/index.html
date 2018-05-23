@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C# | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Asp.net MVC模式 1. 创建MVC项目### 在 New Project 对话框中：     - 打开Visual C#模板     - 选择模板 ASP.NET MVC 3 Web Application     - 设置项目名称为 MvcDemo     - 设置磁盘位置，比如 d:\demo     - 点击 OK ### 当 New Project 对话框打开时：     - 选">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#">
+<meta property="og:url" content="http://yoursite.com/2018/05/23/C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Asp.net MVC模式 1. 创建MVC项目### 在 New Project 对话框中：     - 打开Visual C#模板     - 选择模板 ASP.NET MVC 3 Web Application     - 设置项目名称为 MvcDemo     - 设置磁盘位置，比如 d:\demo     - 点击 OK ### 当 New Project 对话框打开时：     - 选">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-23T07:03:51.240Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C#">
+<meta name="twitter:description" content="Asp.net MVC模式 1. 创建MVC项目### 在 New Project 对话框中：     - 打开Visual C#模板     - 选择模板 ASP.NET MVC 3 Web Application     - 设置项目名称为 MvcDemo     - 设置磁盘位置，比如 d:\demo     - 点击 OK ### 当 New Project 对话框打开时：     - 选">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/23/C/" class="article-date">
+  <time datetime="2018-05-23T06:19:24.000Z" itemprop="datePublished">2018-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C#
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Asp.net MVC模式</p>
+<h2 id="1-创建MVC项目"><a href="#1-创建MVC项目" class="headerlink" title="1. 创建MVC项目"></a>1. 创建MVC项目</h2><pre><code>### 在 New Project 对话框中：
+    - 打开Visual C#模板
+    - 选择模板 ASP.NET MVC 3 Web Application
+    - 设置项目名称为 MvcDemo
+    - 设置磁盘位置，比如 d:\demo
+    - 点击 OK
+### 当 New Project 对话框打开时：
+    - 选择 Internet Application 模板
+    - 选择 Razor Engine（Razor 引擎）
+    - 选择 HTML5 Markup（HTML5 标记）
+    - 点击 OK
+</code></pre><h2 id="2-MVC-文件夹"><a href="#2-MVC-文件夹" class="headerlink" title="2. MVC 文件夹"></a>2. MVC 文件夹</h2><pre><code>### 应用程序信息
+    - Properties
+    - References
+
+### 应用程序文件夹
+    - App_Data 文件夹 ：用于存储应用程序数据
+    - Content 文件夹 ：用于存放静态文件，比如样式表（CSS 文件）、图标和图像
+    - Controllers 文件夹 ：包含负责处理用户输入和响应的控制器类
+    - Models 文件夹
+    - Scripts 文件夹 ：存储应用程序的 JavaScript 文件
+    - Views 文件夹
+
+### 配置文件
+    - Global.asax
+    - packages.config
+    - Web.config
+</code></pre><h2 id="3-样式和布局"><a href="#3-样式和布局" class="headerlink" title="3. 样式和布局"></a>3. 样式和布局</h2><pre><code>### 添加布局
+        文件 _Layout.cshtml 表示应用程序中每个页面的布局。它位于 Views 文件夹中的 Shared 文件夹。打开文件 _Layout.cshtml，把内容替换成：
+        ~ 
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;title&gt;@ViewBag.Title&lt;/title&gt;
+        &lt;link href=&quot;@Url.Content(&quot;~/Content/Site.css&quot;)&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+        &lt;script src=&quot;@Url.Content(&quot;~/Scripts/jquery-1.5.1.min.js&quot;)&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;@Url.Content(&quot;~/Scripts/modernizr-1.7.min.js&quot;)&quot;&gt;&lt;/script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;ul id=&quot;menu&quot;&gt;
+        &lt;li&gt;@Html.ActionLink(&quot;Home&quot;, &quot;Index&quot;, &quot;Home&quot;)&lt;/li&gt;
+        &lt;li&gt;@Html.ActionLink(&quot;Movies&quot;, &quot;Index&quot;, &quot;Movies&quot;)&lt;/li&gt;
+        &lt;li&gt;@Html.ActionLink(&quot;About&quot;, &quot;About&quot;, &quot;Home&quot;)&lt;/li&gt;
+        &lt;/ul&gt; 
+        &lt;section id=&quot;main&quot;&gt;
+        @RenderBody()
+        &lt;p&gt;Copyright RUNOOB 2012. All Rights Reserved.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        ~
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/23/C/" data-id="cjhiriz8r0000u0ui9vx4hpdt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/18/markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">markdown</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/23/C/">C#</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/markdown/">markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/HP-Socket/">HP-Socket</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/welcome/">welcome</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
