@@ -5,19 +5,21 @@
   
 
   
-  <title>Hexo</title>
+  <title>Gulp JavaScript构建系统 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Gulp JavaScript构建系统标签（空格分隔）： C#  在此输入正文 1. 全局安装 gulp：1$ npm install --global gulp 2. 作为项目的开发依赖（devDependencies）安装：1$ npm install --save-dev gulp 3. 在项目根目录下创建一个名为 gulpfile.js 的文件：12345var gulp = requir">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Gulp JavaScript构建系统">
 <meta property="og:url" content="http://yoursite.com/2018/05/24/gulp/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Gulp JavaScript构建系统标签（空格分隔）： C#  在此输入正文 1. 全局安装 gulp：1$ npm install --global gulp 2. 作为项目的开发依赖（devDependencies）安装：1$ npm install --save-dev gulp 3. 在项目根目录下创建一个名为 gulpfile.js 的文件：12345var gulp = requir">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-24T02:34:00.131Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/gulp/1.png">
+<meta property="og:updated_time" content="2018-05-24T03:22:39.766Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Gulp JavaScript构建系统">
 <meta name="twitter:description" content="Gulp JavaScript构建系统标签（空格分隔）： C#  在此输入正文 1. 全局安装 gulp：1$ npm install --global gulp 2. 作为项目的开发依赖（devDependencies）安装：1$ npm install --save-dev gulp 3. 在项目根目录下创建一个名为 gulpfile.js 的文件：12345var gulp = requir">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/gulp/1.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -67,12 +69,22 @@
         <section id="main"><article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/24/gulp/" class="article-date">
-  <time datetime="2018-05-24T02:33:20.665Z" itemprop="datePublished">2018-05-24</time>
+  <time datetime="2018-05-24T03:19:24.000Z" itemprop="datePublished">2018-05-24</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Gulp JavaScript构建系统
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -84,12 +96,12 @@
 <h2 id="3-在项目根目录下创建一个名为-gulpfile-js-的文件："><a href="#3-在项目根目录下创建一个名为-gulpfile-js-的文件：" class="headerlink" title="3. 在项目根目录下创建一个名为 gulpfile.js 的文件："></a>3. 在项目根目录下创建一个名为 gulpfile.js 的文件：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, function() &#123;</span><br><span class="line">  // 将你的默认的任务代码放在这</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="4-运行-gulp："><a href="#4-运行-gulp：" class="headerlink" title="4. 运行 gulp："></a>4. 运行 gulp：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure>
 <h2 id="5-在Asp-net-Core项目中添加gulp"><a href="#5-在Asp-net-Core项目中添加gulp" class="headerlink" title="5. 在Asp.net Core项目中添加gulp"></a>5. 在Asp.net Core项目中添加gulp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;binding Clean=&apos;clean&apos; /&gt;</span><br><span class="line">&quot;use strict&quot;;</span><br><span class="line"></span><br><span class="line">var gulp = require(&quot;gulp&quot;),</span><br><span class="line">    rimraf = require(&quot;rimraf&quot;),</span><br><span class="line">    concat = require(&quot;gulp-concat&quot;),</span><br><span class="line">    cssmin = require(&quot;gulp-cssmin&quot;),</span><br><span class="line">    uglify = require(&quot;gulp-uglify&quot;);</span><br><span class="line"></span><br><span class="line">var webroot = &quot;./wwwroot/&quot;;</span><br><span class="line"></span><br><span class="line">var paths = &#123;</span><br><span class="line">    js: webroot + &quot;js/**/*.js&quot;,</span><br><span class="line">    minJs: webroot + &quot;js/**/*.min.js&quot;,</span><br><span class="line">    css: webroot + &quot;css/**/*.css&quot;,</span><br><span class="line">    minCss: webroot + &quot;css/**/*.min.css&quot;,</span><br><span class="line">    concatJsDest: webroot + &quot;js/site.min.js&quot;,</span><br><span class="line">    concatCssDest: webroot + &quot;css/site.min.css&quot;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;clean:js&quot;, function (cb) &#123;</span><br><span class="line">    rimraf(paths.concatJsDest, cb);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;clean:css&quot;, function (cb) &#123;</span><br><span class="line">    rimraf(paths.concatCssDest, cb);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;clean&quot;, [&quot;clean:js&quot;, &quot;clean:css&quot;]);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;min:js&quot;, function () &#123;</span><br><span class="line">    return gulp.src([paths.js, &quot;!&quot; + paths.minJs], &#123; base: &quot;.&quot; &#125;)</span><br><span class="line">        .pipe(concat(paths.concatJsDest))</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(&quot;.&quot;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;min:css&quot;, function () &#123;</span><br><span class="line">    return gulp.src([paths.css, &quot;!&quot; + paths.minCss])</span><br><span class="line">        .pipe(concat(paths.concatCssDest))</span><br><span class="line">        .pipe(cssmin())</span><br><span class="line">        .pipe(gulp.dest(&quot;.&quot;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;min&quot;, [&quot;min:js&quot;, &quot;min:css&quot;]);</span><br></pre></td></tr></table></figure>
-<p>gulp是一个用于JavaScript的构建系统。</p>
+<h3 id="6-在Visual-Studio-2015中运行"><a href="#6-在Visual-Studio-2015中运行" class="headerlink" title="6. 在Visual Studio 2015中运行"></a>6. 在Visual Studio 2015中运行</h3><p>右键点击gulp文件，选择“任务运行程序资源管理器”，如下图：<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/gulp/1.png" alt="Aaron Swartz"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/24/gulp/" data-id="cjhjxt894000178ui5tt4gqhm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/24/gulp/" data-id="cjhjz4xuz0002c4uitsrngh4q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -98,10 +110,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2018/05/24/bower/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Bower的使用
+        
+      </div>
+    </a>
   
-    <a href="/2018/05/23/C/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2018/05/23/CS/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">C#</div>
+      <div class="article-nav-title">Asp.net MVC模式</div>
     </a>
   
 </nav>
@@ -138,11 +159,15 @@
       <ul>
         
           <li>
-            <a href="/2018/05/24/gulp/">(no title)</a>
+            <a href="/2018/05/24/bower/">Bower的使用</a>
           </li>
         
           <li>
-            <a href="/2018/05/23/C/">C#</a>
+            <a href="/2018/05/24/gulp/">Gulp JavaScript构建系统</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/23/CS/">Asp.net MVC模式</a>
           </li>
         
           <li>
@@ -151,10 +176,6 @@
         
           <li>
             <a href="/2018/05/18/HP-Socket/">HP-Socket</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/18/welcome/">welcome</a>
           </li>
         
       </ul>
