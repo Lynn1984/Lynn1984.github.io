@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Asp.net MVC模式（二） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="标签（空格分隔）： C#  1. 数据访问层使用SQL Server和EF（Entity Framework）创建相关的数据库及数据库访问层。 1.1 简述实体框架（EF）EF是一种ORM工具，ORM表示对象关联映射。在RDMS中，对象称为表格和列对象，而在.net中（面向对象）称为类，对象以及属性。任何数据驱动的应用实现的方式有两种：  通过代码与数据库关联（称为数据访问层或数据逻辑层） 通过编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Asp.net MVC模式（二）">
+<meta property="og:url" content="http://yoursite.com/2018/05/25/CS-MVC2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="标签（空格分隔）： C#  1. 数据访问层使用SQL Server和EF（Entity Framework）创建相关的数据库及数据库访问层。 1.1 简述实体框架（EF）EF是一种ORM工具，ORM表示对象关联映射。在RDMS中，对象称为表格和列对象，而在.net中（面向对象）称为类，对象以及属性。任何数据驱动的应用实现的方式有两种：  通过代码与数据库关联（称为数据访问层或数据逻辑层） 通过编">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/14.png">
+<meta property="og:updated_time" content="2018-05-25T12:19:52.175Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Asp.net MVC模式（二）">
+<meta name="twitter:description" content="标签（空格分隔）： C#  1. 数据访问层使用SQL Server和EF（Entity Framework）创建相关的数据库及数据库访问层。 1.1 简述实体框架（EF）EF是一种ORM工具，ORM表示对象关联映射。在RDMS中，对象称为表格和列对象，而在.net中（面向对象）称为类，对象以及属性。任何数据驱动的应用实现的方式有两种：  通过代码与数据库关联（称为数据访问层或数据逻辑层） 通过编">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/8.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CS-MVC2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/25/CS-MVC2/" class="article-date">
+  <time datetime="2018-05-25T09:38:56.000Z" itemprop="datePublished">2018-05-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Asp.net MVC模式（二）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>标签（空格分隔）： C#</p>
+<hr>
+<h2 id="1-数据访问层"><a href="#1-数据访问层" class="headerlink" title="1. 数据访问层"></a>1. 数据访问层</h2><p>使用SQL Server和EF（Entity Framework）创建相关的数据库及数据库访问层。</p>
+<h3 id="1-1-简述实体框架（EF）"><a href="#1-1-简述实体框架（EF）" class="headerlink" title="1.1 简述实体框架（EF）"></a>1.1 简述实体框架（EF）</h3><p>EF是一种ORM工具，ORM表示对象关联映射。<br>在RDMS中，对象称为表格和列对象，而在.net中（面向对象）称为类，对象以及属性。<br>任何数据驱动的应用实现的方式有两种：</p>
+<ul>
+<li>通过代码与数据库关联（称为数据访问层或数据逻辑层）</li>
+<li>通过编写代码将数据库数据映射到面向对象数据，或反向操作。<br>ORM是一种能够自动完成这两种方式的工具。EF是微软的ORM工具。</li>
+</ul>
+<h3 id="1-2-EF的三种方式来实现项目"><a href="#1-2-EF的三种方式来实现项目" class="headerlink" title="1.2 EF的三种方式来实现项目"></a>1.2 EF的三种方式来实现项目</h3><ul>
+<li>数据库优先方法——创建数据库，包含表，列以及表之间的关系等，EF会根据数据库生成相应的Model类（业务实体）及数据访问层代码。</li>
+<li>模型优先方法——模型优先指模型类及模型之间的关系是由Model设计人员在VS中手动生成和设计的，EF将模型生成数据访问层和数据库。</li>
+<li>代码优先方法——代码优先指手动创建POCO类。这些类之间的关系使用代码定义。当应用程序首次执行时，EF将在数据库服务器中自动生成数据访问层以及相应的数据库。</li>
+</ul>
+<h3 id="1-3-POCO类"><a href="#1-3-POCO类" class="headerlink" title="1.3 POCO类"></a>1.3 POCO类</h3><p>POCO即Plain Old CLR对象，POCO类就是已经创建的简单.Net类。在上两节的实例中，Employee类就是一个简单的POCO类。</p>
+<h2 id="2-数据传递使用数据库"><a href="#2-数据传递使用数据库" class="headerlink" title="2. 数据传递使用数据库"></a>2. 数据传递使用数据库</h2><h3 id="2-1-创建数据库"><a href="#2-1-创建数据库" class="headerlink" title="2.1 创建数据库"></a>2.1 创建数据库</h3><p>连接SQL SERVER ,创建数据库 “MVCDemoDB”。<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/8.png" alt="Aaron Swartz"></p>
+<h3 id="2-2-创建连接字符串（ConnectionString）"><a href="#2-2-创建连接字符串（ConnectionString）" class="headerlink" title="2.2 创建连接字符串（ConnectionString）"></a>2.2 创建连接字符串（ConnectionString）</h3><p>打开Web.Config 文件，在&lt; Configuration &gt;标签内添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;connectionStrings&gt;</span><br><span class="line">    &lt;add connectionString=&quot;Data Source=(local);Initial Catalog=MVCDemoDB;Integrated Security=True&quot; name=&quot;SalesERPDAL&quot; providerName=&quot;System.Data.SqlClient&quot;/&gt;</span><br><span class="line">  &lt;/connectionStrings&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-添加EF引用"><a href="#2-3-添加EF引用" class="headerlink" title="2.3 添加EF引用"></a>2.3 添加EF引用</h3><p>右击项目-&gt;管理Nuget 包。选择Entity Framework 并点击安装。</p>
+<h3 id="2-4-创建数据访问层"><a href="#2-4-创建数据访问层" class="headerlink" title="2.4 创建数据访问层"></a>2.4 创建数据访问层</h3><ul>
+<li>在根目录下，新建文件夹”DataAccessLayer“，并在DataAccessLayer文件夹中新建类” MVCDemoDAL “</li>
+<li>在类文件顶部添加 Using System.Data.Entity代码。</li>
+<li>继承DbContext类</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">namespace MVCDemo.DataAccessLayer</span><br><span class="line">&#123;</span><br><span class="line">    public class MVCDemoDAL: DbContext</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-5-创建Employee类的主键"><a href="#2-5-创建Employee类的主键" class="headerlink" title="2.5 创建Employee类的主键"></a>2.5 创建Employee类的主键</h3><p>打开Employee类，输入using语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Web;</span><br><span class="line">using System.ComponentModel.DataAnnotations;</span><br><span class="line"></span><br><span class="line">namespace MVCDemo.Models</span><br><span class="line">&#123;</span><br><span class="line">    public class Employee</span><br><span class="line">    &#123;</span><br><span class="line">        [Key]</span><br><span class="line">        public string FirstName &#123; get; set; &#125;</span><br><span class="line">        public string LastName &#123; get; set; &#125;</span><br><span class="line">        public int Salary &#123; get; set; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-定义映射关系"><a href="#2-6-定义映射关系" class="headerlink" title="2.6 定义映射关系"></a>2.6 定义映射关系</h3><p>修改MVCDemoDAL类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Data.Entity;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Web;</span><br><span class="line"></span><br><span class="line">namespace MVCDemo.DataAccessLayer</span><br><span class="line">&#123;</span><br><span class="line">    public class MVCDemoDAL: DbContext</span><br><span class="line">    &#123;</span><br><span class="line">        protected override void OnModelCreating(DbModelBuilder modelBuilder)</span><br><span class="line">        &#123;</span><br><span class="line">            modelBuilder.Entity&lt;Employee&gt;().ToTable(&quot;TblEmployee&quot;);</span><br><span class="line">            base.OnModelCreating(modelBuilder);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：上述代码中提到“TblEmployee”是表名称，是运行时自动生成的。</p>
+<h3 id="2-7-在数据库中添加新属性Employee"><a href="#2-7-在数据库中添加新属性Employee" class="headerlink" title="2.7 在数据库中添加新属性Employee"></a>2.7 在数据库中添加新属性Employee</h3><p>在 MVCDemoDAL 类中添加新属性 Employee。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public DbSet&lt;Employee&gt; Employees &#123; get; set; &#125;</span><br></pre></td></tr></table></figure>
+<p>DbSet表示数据库中能够被查询的所有Employee</p>
+<h3 id="2-8-改变业务层代码，并从数据库中获取数据"><a href="#2-8-改变业务层代码，并从数据库中获取数据" class="headerlink" title="2.8 改变业务层代码，并从数据库中获取数据"></a>2.8 改变业务层代码，并从数据库中获取数据</h3><p>修改EmployeeLayer类，添加GetAllEmployees方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;Employee&gt; GetAllEmployees()</span><br><span class="line">&#123;</span><br><span class="line">    MVCDemoDAL dal = new MVCDemoDAL();</span><br><span class="line">    return dal.Employees.ToList();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-9-插入测试数据"><a href="#2-9-插入测试数据" class="headerlink" title="2.9 插入测试数据"></a>2.9 插入测试数据</h3><p>插入数据：</p>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/9.png" alt="Aaron Swartz"></p>
+<p>运行效果：</p>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/10.png" alt="Aaron Swartz"></p>
+<h2 id="3-数据集"><a href="#3-数据集" class="headerlink" title="3. 数据集"></a>3. 数据集</h2><ul>
+<li>DbSet数据集是数据库方面的概念 ，指数据库中可以查询的实体的集合。</li>
+<li>当执行Linq 查询时，Dbset对象能够将查询内部转换，并触发数据库。</li>
+</ul>
+<h2 id="4-连接数据访问层和数据库"><a href="#4-连接数据访问层和数据库" class="headerlink" title="4. 连接数据访问层和数据库"></a>4. 连接数据访问层和数据库</h2><p>数据访问层和数据库之间的映射通过名称实现的，一般ConnectionString（连接字符串）的名称和数据访问层的类名称是相同的，都是MVCDemoDAL，因此会自动实现映射。<br>如果需要修改连接字符串的名称，则需要使用下面的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public MVCDemoDAL():base(&quot;NewName&quot;)&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-创建数据入口（Data-Entry-Screen）"><a href="#5-创建数据入口（Data-Entry-Screen）" class="headerlink" title="5. 创建数据入口（Data Entry Screen）"></a>5. 创建数据入口（Data Entry Screen）</h2><ul>
+<li>在TestController中新建 “AddNew”action 方法：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult addNew()</span><br><span class="line">&#123;</span><br><span class="line">    return View(&quot;CreateEmployee&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在View文件夹中的MyView6.cshtml文件中加入addNew action的入口：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href =&quot;/Test/AddNew&quot;&gt; Add New &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/11.png" alt="Aaron Swartz"></p>
+<ul>
+<li>View文件夹中的CreateEmployee.cshtml文件：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@&#123;</span><br><span class="line">    Layout = null;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span><br><span class="line">    &lt;title&gt;CreateEmployee&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;form action=&quot;/Test/SaveEmployee&quot; method=&quot;post&quot;&gt;</span><br><span class="line">            First Name: &lt;input type=&quot;text&quot; id=&quot;TxtFName&quot; name=&quot;FirstName&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            Last Name: &lt;input type=&quot;text&quot; id=&quot;TxtLName&quot; name=&quot;LastName&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            Salary: &lt;input type=&quot;text&quot; id=&quot;TxtSalary&quot; name=&quot;Salary&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; name=&quot;BtnSave&quot; value=&quot;Save Employee&quot; /&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; name=&quot;BtnReset&quot; value=&quot;Reset&quot; /&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/12.png" alt="Aaron Swartz"></p>
+<h2 id="6-Form-标签"><a href="#6-Form-标签" class="headerlink" title="6. Form 标签"></a>6. Form 标签</h2><p>Form标签是HTML中产生请求的一种方式，Form标签内部的提交按钮只要一被点击，请求会被发送到相关的action 属性。</p>
+<p>方法属性决定了请求类型。有四种请求类型：get，post，put以及delete.</p>
+<ul>
+<li>Get： 当需要获取数据时使用。</li>
+<li>Post： 当需要新建一些事物时使用。</li>
+<li>Put: 当需要更新数据时使用。</li>
+<li>Delete：需要删除数据时使用。</li>
+</ul>
+<p>当请求类型是Get，Put或Delete时，值会通过查询语句发送，当请求是Post类型，值会通过Post数据传送。<br>所有输入控件的值将随着请求一起发送。同一时间可能会接收到多个值，为了区分发送到所有值为每个值附加一个Key，这个Key在这里就是名称属性。<br>提交按钮在给服务器发送请求而专门使用的，而简单的按钮是执行一些自定义的客户端行为而使用的。按钮不会自己做任何事情。</p>
+<h2 id="7-在服务器端（或Controller）获取Post数据"><a href="#7-在服务器端（或Controller）获取Post数据" class="headerlink" title="7. 在服务器端（或Controller）获取Post数据"></a>7. 在服务器端（或Controller）获取Post数据</h2><h3 id="7-1-创建SaveEmployee-action方法"><a href="#7-1-创建SaveEmployee-action方法" class="headerlink" title="7.1 创建SaveEmployee action方法"></a>7.1 创建SaveEmployee action方法</h3><p>在Test控制器中创建 名为 ”SaveEmployee“ action 方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public string SaveEmployee(Employee e)</span><br><span class="line">&#123;</span><br><span class="line">    return e.FirstName + &quot;|&quot; + e.LastName + &quot;|&quot; + e.Salary;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/13.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/14.png" alt="Aaron Swartz"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/25/CS-MVC2/" data-id="cjhlxpfnd000054ui7t2ng0go" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/24/bower/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Bower的使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/25/CS-MVC2/">Asp.net MVC模式（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/24/bower/">Bower的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/24/gulp/">Gulp JavaScript构建系统</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/23/CS-MVC/">Asp.net MVC模式（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/markdown/">Markdown基本语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
