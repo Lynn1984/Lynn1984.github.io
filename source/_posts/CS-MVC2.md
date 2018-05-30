@@ -236,3 +236,249 @@ public string SaveEmployee(Employee e)
 
 ![Aaron Swartz](https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/13.png)
 ![Aaron Swartz](https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/14.png)
+
+### 7.2 增加重置按钮和取消按钮
+
+* View界面代码：
+
+```
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateEmployee</title>
+
+    <script type="text/javascript">
+        function ResetForm() {
+            document.getElementById('TxtFName').value = "";
+            document.getElementById('TxtLName').value = "";
+            document.getElementById('TxtSalary').value = "";
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form action="/Test/SaveEmployee" method="post">
+            First Name: <input type="text" id="TxtFName" name="FirstName" value="" /><br />
+            Last Name: <input type="text" id="TxtLName" name="LastName" value="" /><br />
+            Salary: <input type="text" id="TxtSalary" name="Salary" value="" /><br />
+            <input type="submit" name="BtnSubmit" value="Save Employee" />
+            <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
+            <input type="submit" name="BtnSubmit" value="Cancel" />
+        </form>
+    </div>
+</body>
+</html>
+```
+
+* TestController 代码
+
+```
+public ActionResult SaveEmployee(Employee e, string BtnSubmit)
+{
+    switch (BtnSubmit)
+    {
+        case "Save Employee":
+            return Content(e.FirstName + "|" + e.LastName + "|" + e.Salary);
+        case "Cancel":
+            return RedirectToAction("GetView6");
+    }
+    return new EmptyResult();
+}
+```
+
+* 运行http://yourAddress/Test/GetView6，点击AddNew，Save Employee和Cancel按钮，测试相应的功能
+
+### 7.3 实现多重提交按钮的其他方法
+
+* 隐藏 Form 元素
+
+```
+<form action="/Employee/CancelSave" id="CancelForm" method="get" style="display:none"> 
+</form>
+<input type="button" name="BtnSubmit" value="Cancel" onclick="document.getElementById('CancelForm').submit()" />
+```
+
+* 使用JavaScript 动态的修改URL
+
+```
+<form action="" method="post" id="EmployeeForm" >
+<input type="submit" name="BtnSubmit" value="Save Employee" onclick="document.getElementById('EmployeeForm').action = '/Employee/SaveEmployee'" />
+<input type="submit" name="BtnSubmit" value="Cancel" onclick="document.getElementById('EmployeeForm').action = '/Employee/CancelSave'" />
+</form>
+```
+
+* Ajax
+使用常规输入按钮来代替提交按钮，并且点击时使用jQuery或任何其他库来产生纯Ajax请求。
+
+## 8. 保存数据库记录，更新表格
+
+* 在EmployeeLayer  中创建 SaveEmployee，如下：
+
+```
+public Employee SaveEmployee(Employee e)
+{
+    MVCDemoDAL dal = new MVCDemoDAL();
+    dal.Employees.Add(e);
+    dal.SaveChanges();
+    return e;
+}
+```
+
+* TestController修改
+
+```
+public ActionResult SaveEmployee(Employee e, string BtnSubmit)
+{
+    switch (BtnSubmit)
+    {
+        case "Save Employee":
+            EmployeeLayer empBal = new EmployeeLayer();
+            empBal.SaveEmployee(e);
+            return RedirectToAction("Index");
+        case "Cancel":
+            return RedirectToAction("Index");
+    }
+    return new EmptyResult();
+}
+```
+
+* 运行
+![Aaron Swartz](https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/15.png)
+![Aaron Swartz](https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/15.png)
+![Aaron Swartz](https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/17.png)
+
+## 9. 添加服务器端验证
+
+### 9.1 Model Binder
+
+当Action方法包含元类型参数，Model Binder会与参数名称对比。
+
+* 当匹配成功时，响应接收的数据会被分配给参数
+* 匹配不成功时，参数会设置为缺省值，例如，如果是字符串类型则被设置为null，如果是整型则设置为0
+* 由于数据类型未匹配异常的抛出，不会进行值分配
+
+当参数为类，Model Binder将通过检索类所有的属性，将接收的数据与类属性名称比较。
+当匹配成功时：
+
+* 如果接收的值是空，则会将空值分配给属性，如果无法执行空值分配，会设置缺省值，ModelState.IsValid将设置为fasle
+* 如果空值分配成功，会考虑值是否合法，ModelState.IsValid将设置为fasle
+* 如果匹配不成功，参数会被设置为缺省值。在本实验中ModelState.IsValid不会受影响
+
+## 9.2  使用 DataAnnotations 装饰属性
+
+* 修改Employee类
+
+```
+public class Employee
+{
+    [Key]
+    [Required(ErrorMessage = "Please enter First Name:")]
+    public string FirstName { get; set; }
+
+    [StringLength(5, ErrorMessage = "Last Name length should not be greater than 20")]
+    public string LastName { get; set; }
+
+    public int Salary { get; set; }
+}
+```
+
+* 修改TestController中的SaveEmployee方法
+
+```
+public ActionResult SaveEmployee(Employee e, string BtnSubmit)
+{
+    switch (BtnSubmit)
+    {
+        case "Save Employee":
+            if (ModelState.IsValid)
+            { 
+                EmployeeLayer empBal = new EmployeeLayer();
+                empBal.SaveEmployee(e);
+            } 
+            else
+            {
+                return View("CreateEmployee");
+            }
+            return RedirectToAction("GetView6");
+        case "Cancel":
+            return RedirectToAction("GetView6");
+    }
+    return new EmptyResult();
+}
+```
+
+* 修改CreateEmployee.cshtml
+
+```
+<form action="/Test/SaveEmployee" method="post">
+    <table>
+        <tr>
+            <td>
+                First Name:
+            </td>
+            <td>
+                <input type="text" id="TxtFName" name="FirstName" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                @Html.ValidationMessage("FirstName")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name:
+            </td>
+            <td>
+                <input type="text" id="TxtLName" name="LastName" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                @Html.ValidationMessage("LastName")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Salary:
+            </td>
+            <td>
+                <input type="text" id="TxtSalary" name="Salary" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                @Html.ValidationMessage("Salary")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="BtnSubmit" value="Save Employee" />
+                <input type="submit" name="BtnSubmit" value="Cancel" />
+                <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
+            </td>
+        </tr>
+    </table>
+</form>
+```
+
+* 运行
+
+![Aaron Swartz](https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/19.png)
+![Aaron Swartz](https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/20.png)
+
+* 遇到的问题
+“System.InvalidOperationException”类型的异常在 EntityFramework.dll 中发生，但未在用户代码中进行处理
+其他信息: 支持“MVCDemoDAL”上下文的模型已在数据库创建后发生更改。请考虑使用 Code First 迁移更新数据库(http://go.microsoft.com/fwlink/?LinkId=238269)。
+
+![Aaron Swartz](https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/18.png)
+
+解决方法，在Global.asax文件中在 Application_Start后添加以下语句：
+
+```
+Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MVCDemoDAL>());
+```
