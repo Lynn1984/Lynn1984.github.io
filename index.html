@@ -248,6 +248,510 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-wcf" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/06/wcf/" class="article-date">
+      <time datetime="2018-06-06T05:51:21.000Z" itemprop="datePublished">2018-06-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/06/wcf/">WCF入门教程，即学即会</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>标签（空格分隔）： C#</p>
+<hr>
+<h2 id="什么是WCF"><a href="#什么是WCF" class="headerlink" title="什么是WCF"></a>什么是WCF</h2><ul>
+<li>WindowsCommunication Foundation(WCF)是由微软开发的一系列支持数据通信的应用程序框架，可以翻译为Windows 通讯开发平台。</li>
+<li>整合了原有的windows通讯的 .net Remoting，WebService，Socket的机制，并融合有Http和Ftp的相关技术。</li>
+<li>是Windows平台上开发分布式应用最佳的实践方式。</li>
+</ul>
+<h2 id="WCF体系架构简介"><a href="#WCF体系架构简介" class="headerlink" title="WCF体系架构简介"></a>WCF体系架构简介</h2><h3 id="契约与说明"><a href="#契约与说明" class="headerlink" title="契约与说明"></a>契约与说明</h3><p>契约定义消息系统的各个方面：</p>
+<ul>
+<li>数据契约：服务中的参数；</li>
+<li>消息契约：使用SOAP协议特定的消息部分；</li>
+<li>服务契约：服务中的方法；</li>
+<li>策略与绑定：策略设置安全或其他条件，绑定指定传输方式与编码。</li>
+</ul>
+<h3 id="服务运行时"><a href="#服务运行时" class="headerlink" title="服务运行时"></a>服务运行时</h3><p>服务运行期间的行为控制</p>
+<ul>
+<li>限制行为：控制处理的消息数；</li>
+<li>错误行为：出现内部错误时所处理的操作；</li>
+<li>元数据行为：是否向外提供元数据及元数据的提供方式；</li>
+<li>实例行为：可运行的服务实例数目；</li>
+<li>事务行为：处理事务；</li>
+<li>调度行为：控制WCF处理消息的方式；</li>
+</ul>
+<h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><ul>
+<li>消息传递层：说明数据的交换格式和传输模式。</li>
+<li>消息传递层由通道（信道）组成，通道是对消息进行处理的组件，负责以一致的方式对消息进行整理和传送。通道用于传输层、协议层、及消息获取。各层次的通道组成了信道栈。</li>
+<li>通道对消息和消息头进行操作，服务运行时对消息正文进行操作。</li>
+<li>两种类型：传输通道 与 协议通道。</li>
+<li>传输通道：读取和写入来自网络的消息，传输通道通过编码器将消息转换为网络传输使用的字节流，以及将字节流转换为消息。传输通道示例如：HTTP通道、命名管道、TCP、MSMQ等；</li>
+<li>协议通道：通过读取或写入消息头的方式来实现消息协议，协议通道示例如：WS-Security，WS-Reliability。</li>
+</ul>
+<h3 id="承载和激活"><a href="#承载和激活" class="headerlink" title="承载和激活"></a>承载和激活</h3><ul>
+<li>服务宿主： 负责WCF服务的生命周期和上下文的操作系统进程，负责启动和停止WCF服务，并提供控制服务的基本管理功能。</li>
+</ul>
+<h2 id="WCF基础概念介绍"><a href="#WCF基础概念介绍" class="headerlink" title="WCF基础概念介绍"></a>WCF基础概念介绍</h2><h3 id="契约（Contract）"><a href="#契约（Contract）" class="headerlink" title="契约（Contract）"></a>契约（Contract）</h3><p>WCF 的基本概念是以合约(Contract)来定义双方沟通的协议，合约必须要以接口的方式来体现，而实际的服务代码必须要由这些合约接口派生并实现。合约分成了四种：</p>
+<ul>
+<li>数据合约 (Data Contract)，订定双方沟通时的数据格式。</li>
+<li>服务合约 (Service Contract)，订定服务的定义。</li>
+<li>操作合约 (Operation Contract)，订定服务提供的方法。</li>
+<li>消息合约 (MessageContract)，订定在通信期间改写消息内容的规范。一个WCF中的合约，就如同下列代码所示：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">using System;  </span><br><span class="line">using System.ServiceModel;  </span><br><span class="line">namespace Microsoft.ServiceModel.Samples&#123;  </span><br><span class="line">  </span><br><span class="line">[ServiceContract(Namespace = &quot;http://Microsoft.ServiceModel.Samples&quot;)]// 服务合约  </span><br><span class="line">public interface ICalculator  </span><br><span class="line">&#123;  </span><br><span class="line">[OperationContract] // 操作合约  </span><br><span class="line">double Add(double n1, double n2);  </span><br><span class="line">  </span><br><span class="line">[OperationContract] // 操作合约  </span><br><span class="line">double Subtract(double n1, double n2);  </span><br><span class="line">  </span><br><span class="line">[OperationContract] // 操作合约  </span><br><span class="line">double Multiply(double n1, double n2);  </span><br><span class="line">  </span><br><span class="line">[OperationContract] // 操作合约  </span><br><span class="line">double Divide(double n1, double n2);  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="绑定-Binding"><a href="#绑定-Binding" class="headerlink" title="绑定 (Binding)"></a>绑定 (Binding)</h3><p>由于 WCF 支持了 HTTP，TCP，Named Pipe，MSMQ，Peer-To-Peer TCP等协议，而 HTTP 又分为基本 HTTP 支持 (BasicHttpBinding)以及WS-HTTP支持(WsHttpBinding)，而 TCP亦支持NetTcpBinding， NetPeerTcpBinding等通信方式，因此，双方必须要统一通信的协议，并且也要在编码以及格式上要有所一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;  </span><br><span class="line">&lt;configuration&gt;  </span><br><span class="line">&lt;system.serviceModel&gt;  </span><br><span class="line">&lt;!-- 设定服务系结的资讯 --&gt;  </span><br><span class="line">&lt;services&gt;  </span><br><span class="line">&lt;service name=&quot; CalculatorService&quot; &gt;  </span><br><span class="line">&lt;endpoint address=&quot;&quot; binding=&quot;wsHttpBinding&quot;bindingConfiguration=&quot;Binding1&quot; contract=&quot;ICalculator&quot;/&gt;  </span><br><span class="line">&lt;/service&gt;  </span><br><span class="line">&lt;/services&gt;  </span><br><span class="line">&lt;!-- 设定通讯协定系结的资讯 --&gt;  </span><br><span class="line">&lt;bindings&gt;  </span><br><span class="line">&lt;wsHttpBinding&gt;  </span><br><span class="line">&lt;binding name=&quot;Binding1&quot;&gt;  </span><br><span class="line">&lt;/binding&gt;  </span><br><span class="line">&lt;/wsHttpBinding&gt;  </span><br><span class="line">&lt;/bindings&gt;  </span><br><span class="line">&lt;/system.serviceModel&gt;  </span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="终结点"><a href="#终结点" class="headerlink" title="终结点"></a>终结点</h3><p>–终结点是用来发送或接收消息（或执行这两种操作）的构造。终结点包括一个定义消息可以发送到的目的地的位置（地址）结点，包括一个定义消息可以发送到的目的地的位置（地址）、一个描述消息应如何发送的通信机制规范（绑定）以及对于可以在该位置发送或接收（或两者皆可）的一组消息的定义（服务协定）—该定义还描述了可以发送何种消息。</p>
+<h3 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h3><p>所谓的“元数据”就是描述数据的数据，即描述当前服务有哪些服务契约、方法契约和数据契约以及终结点的信息。而“元数据终结点”就是向外界暴露元数据的终结点。当客户端添加WCF服务引用的时候，会首先通过元数据取得服务器端的契约信息、终结点信息，然后根据这些信息在客户端创建了代理类，我们在客户端调用WCF服务的过程实际上就是通过代理类调用WCF服务的过程。</p>
+<h2 id="简单的实例"><a href="#简单的实例" class="headerlink" title="简单的实例"></a>简单的实例</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><ul>
+<li>新建立空白解决方案，并在解决方案中新建项目，项目类型为：WCF服务应用程序。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/1.png" alt="Aaron Swartz"></p>
+<ul>
+<li>建立完成后如下图所示：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/2.png" alt="Aaron Swartz"></p>
+<ul>
+<li>添加自定义的WCF服务文件。在项目中添加新项：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/3.png" alt="Aaron Swartz"></p>
+<ul>
+<li>添加代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">namespace WcfServiceDemo</span><br><span class="line">&#123;</span><br><span class="line">    // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码和配置文件中的接口名“IUser”。</span><br><span class="line">    [ServiceContract]</span><br><span class="line">    public interface IUser</span><br><span class="line">    &#123;</span><br><span class="line">        [OperationContract]</span><br><span class="line">        string ShowName(string name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">namespace WcfServiceDemo</span><br><span class="line">&#123;</span><br><span class="line">    // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码、svc 和配置文件中的类名“User”。</span><br><span class="line">    // 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 User.svc 或 User.svc.cs，然后开始调试。</span><br><span class="line">    public class User : IUser</span><br><span class="line">    &#123;</span><br><span class="line">        public string ShowName(string name)</span><br><span class="line">        &#123;</span><br><span class="line">            string wcfName = string.Format(&quot;WCF服务，显示姓名：&#123;0&#125;&quot;, name);</span><br><span class="line">            return wcfName;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>F5运行，双击ShowName方法</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/4.png" alt="Aaron Swartz"></p>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>选择项目，在“生成”下面选“发布”：<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/6.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/7.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/8.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/9.png" alt="Aaron Swartz"></p>
+<h3 id="IIS-部署运行"><a href="#IIS-部署运行" class="headerlink" title="IIS 部署运行"></a>IIS 部署运行</h3><p>右击“我的电脑”，选择“设备”，添加网站如下图：</p>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/5.png" alt="Aaron Swartz"></p>
+<p>访问<a href="http://localhost:777" target="_blank" rel="noopener">http://localhost:777</a></p>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/10.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/11.png" alt="Aaron Swartz"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-wp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/05/wp/" class="article-date">
+      <time datetime="2018-06-05T12:57:02.000Z" itemprop="datePublished">2018-06-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/05/wp/">wp</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-razor" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/05/razor/" class="article-date">
+      <time datetime="2018-06-05T12:16:25.000Z" itemprop="datePublished">2018-06-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/05/razor/">SP.NET Razor - 标记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>标签（空格分隔）： C#</p>
+<hr>
+<h2 id="Razor简介"><a href="#Razor简介" class="headerlink" title="Razor简介"></a>Razor简介</h2><h3 id="什么是-Razor？"><a href="#什么是-Razor？" class="headerlink" title="什么是 Razor？"></a>什么是 Razor？</h3><ul>
+<li>Razor是一种标记语法，可以让您将基于服务器的代码（Visual Basic 和 C#）嵌入到网页中。</li>
+<li>基于服务器的代码可以在网页传送给浏览器时，创建动态Web内容。</li>
+<li>当一个网页被请求时，服务器在返回页面给浏览器之前先执行页面中的基于服务器的代码。</li>
+<li>通过服务器的运行，代码能执行复杂的任务，比如进入数据库。</li>
+<li>Razor是基于 ASP.NET 的，是为创建Web应用程序而设计的。</li>
+<li>它具有传统ASP.NET的功能，但更容易使用并且更容易学习。</li>
+</ul>
+<h3 id="Razor-语法"><a href="#Razor-语法" class="headerlink" title="Razor 语法"></a>Razor 语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">@for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">&lt;li&gt;@i&lt;/li&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Razor-帮助器"><a href="#Razor-帮助器" class="headerlink" title="Razor 帮助器"></a>Razor 帮助器</h3><ul>
+<li>ASP.NET 帮助器是通过几行简单的Razor代码即可访问的组件。</li>
+<li>您可以使用Razor语法构建自己的帮助器，或者使用内建的ASP.NET帮助器。</li>
+<li>下面是一些有用的Razor帮助器的简短说明：<ul>
+<li>Web Grid（Web 网格）</li>
+<li>Web Graphics（Web 图形）</li>
+<li>Google Analytics（Google 分析）</li>
+<li>Facebook Integration（Facebook 集成）</li>
+<li>Twitter Integration（Twitter 集成）</li>
+<li>Sending Email（发送电子邮件）</li>
+<li>Validation（验证）</li>
+</ul>
+</li>
+</ul>
+<h3 id="Razor-编程语言"><a href="#Razor-编程语言" class="headerlink" title="Razor 编程语言"></a>Razor 编程语言</h3><p>Razor 支持 C# (C sharp) 和 VB (Visual Basic)。</p>
+<h2 id="Razor-语法-1"><a href="#Razor-语法-1" class="headerlink" title="Razor 语法"></a>Razor 语法</h2><h3 id="主要的-Razor-C-语法规则"><a href="#主要的-Razor-C-语法规则" class="headerlink" title="主要的 Razor C# 语法规则"></a>主要的 Razor C# 语法规则</h3><ul>
+<li>Razor 代码块包含在 @{ … } 中</li>
+<li>内联表达式（变量和函数）以 @ 开头</li>
+<li>代码语句用分号结束</li>
+<li>变量使用 var 关键字声明</li>
+<li>字符串用引号括起来</li>
+<li>C# 代码区分大小写</li>
+<li>C# 文件的扩展名是 .cshtml</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Single statement block --&gt;</span><br><span class="line">@&#123; var myMessage =	&quot;Hello World&quot;; &#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- Inline expression or variable --&gt;</span><br><span class="line">&lt;p&gt;The value of myMessage is: @myMessage&lt;/p&gt; </span><br><span class="line"></span><br><span class="line">&lt;!--	Multi-statement block --&gt;</span><br><span class="line">@&#123;</span><br><span class="line">var greeting = &quot;Welcome to our site!&quot;;</span><br><span class="line">var weekDay = DateTime.Now.DayOfWeek;</span><br><span class="line">var greetingMessage = greeting + &quot; Here in Huston it is: &quot; + weekDay;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;The greeting is: @greetingMessage&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="它是如何工作的？"><a href="#它是如何工作的？" class="headerlink" title="它是如何工作的？"></a>它是如何工作的？</h3><ul>
+<li>Razor是一种将服务器代码嵌入在网页中的简单的编程语法。</li>
+<li>Razor语法是基于ASP.NET框架，专门用于创建Web应用程序的部分Microsoft.NET框架。</li>
+<li>Razor语法支持所有 ASP.NET的功能，但是使用的是一种简化语法，对初学者而言更容易学习，对专家而言更有效率的。</li>
+<li>Razor网页可以被描述成带以下两种类型内容的HTML网页：HTML内容和Razor代码。</li>
+<li>当服务器读取页面时，它首先运行Razor代码，然后再发送 HTML页面到浏览器。</li>
+<li>在服务器上执行的代码能够执行一些在浏览器上不能完成的任务，比如，访问服务器数据库。</li>
+<li>服务器代码能创建动态的 HTML内容，然后发送到浏览器。</li>
+<li>从浏览器上看，服务器代码生成的HTML与静态的HTML内容没有什么不同。</li>
+<li>带 Razor 语法的 ASP.NET 网页有特殊的文件扩展名 cshtml（Razor C#）或者 vbhtml（Razor VB）。</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li>变量是用来存储数据的。</li>
+<li>一个变量的名称必须以字母字符开头，并且不能包含空格或者保留字符。</li>
+<li>一个变量可以是一个指定的类型，表示它所存储的数据类型。</li>
+<li>string 变量存储字符串值（”Welcome to RUNOOB.COM”），integer 变量存储数字值（103），date 变量存储日期值，等等。</li>
+<li>变量使用 var 关键字声明，或通过使用类型（如果您想声明类型）声明，但是 ASP.NET 通常能自动确定数据类型。</li>
+</ul>
+<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:right">描述</th>
+<th style="text-align:center">实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:right">整数（全数字）</td>
+<td style="text-align:center">103, 1258</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:right">浮点数</td>
+<td style="text-align:center">3.14, 3.4896</td>
+</tr>
+<tr>
+<td style="text-align:left">decimal</td>
+<td style="text-align:right">十进制数字（高精度）</td>
+<td style="text-align:center">1037.196543</td>
+</tr>
+<tr>
+<td style="text-align:left">bool</td>
+<td style="text-align:right">布尔值</td>
+<td style="text-align:center">true, false</td>
+</tr>
+<tr>
+<td style="text-align:left">string</td>
+<td style="text-align:right">字符串</td>
+<td style="text-align:center">“Welcome to BeiJing”</td>
+</tr>
+</tbody>
+</table>
+<h3 id="转换数据类型"><a href="#转换数据类型" class="headerlink" title="转换数据类型"></a>转换数据类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:right">描述</th>
+<th style="text-align:center">实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">AsInt() IsInt()</td>
+<td style="text-align:right">转换字符串为整数。</td>
+<td style="text-align:center">if (myString.IsInt()) {myInt=myString.AsInt();}</td>
+</tr>
+<tr>
+<td style="text-align:left">AsFloat() IsFloat()</td>
+<td style="text-align:right">转换字符串为浮点数。</td>
+<td style="text-align:center">if (myString.IsFloat()) {myFloat=myString.AsFloat();}</td>
+</tr>
+<tr>
+<td style="text-align:left">AsDecimal() IsDecimal()</td>
+<td style="text-align:right">转换字符串为十进制数。</td>
+<td style="text-align:center">if (myString.IsDecimal()) {myDec=myString.AsDecimal();}</td>
+</tr>
+<tr>
+<td style="text-align:left">AsDateTime() IsDateTime()</td>
+<td style="text-align:right">转换字符串为 ASP.NET DateTime 类型。</td>
+<td style="text-align:center">myString=”10/10/2012”; myDate=myString.AsDateTime();</td>
+</tr>
+<tr>
+<td style="text-align:left">AsBool() IsBool()</td>
+<td style="text-align:right">转换字符串为布尔值。</td>
+<td style="text-align:center">myString=”True”;myBool=myString.AsBool();</td>
+</tr>
+<tr>
+<td style="text-align:left">ToString()</td>
+<td style="text-align:right">转换任何数据类型为字符串。</td>
+<td style="text-align:center">myInt=1234;myString=myInt.ToString();</td>
+</tr>
+</tbody>
+</table>
+<h2 id="循环和数组"><a href="#循环和数组" class="headerlink" title="循环和数组"></a>循环和数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">@for(var i = 10; i &lt; 21; i++)</span><br><span class="line">&#123;&lt;p&gt;Line @i&lt;/p&gt;&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">@foreach (var x in Request.ServerVariables)</span><br><span class="line">&#123;&lt;li&gt;@x&lt;/li&gt;&#125;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">@&#123;</span><br><span class="line">var i = 0;</span><br><span class="line">while (i &lt; 5)</span><br><span class="line">&#123;</span><br><span class="line">i += 1;</span><br><span class="line">&lt;p&gt;Line @i&lt;/p&gt;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@&#123;</span><br><span class="line">string[] members = &#123;&quot;Jani&quot;, &quot;Hege&quot;, &quot;Kai&quot;, &quot;Jim&quot;&#125;;</span><br><span class="line">int i = Array.IndexOf(members, &quot;Kai&quot;)+1;</span><br><span class="line">int len = members.Length;</span><br><span class="line">string x = members[2-1];</span><br><span class="line">&#125;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h3&gt;Members&lt;/h3&gt;</span><br><span class="line">@foreach (var person in members)</span><br><span class="line">&#123;</span><br><span class="line">&lt;p&gt;@person&lt;/p&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;The number of names in Members are @len&lt;/p&gt;</span><br><span class="line">&lt;p&gt;The person at position 2 is @x&lt;/p&gt;</span><br><span class="line">&lt;p&gt;Kai is now in position @i&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="逻辑"><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@&#123;var price=50;&#125;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">@if (price&gt;30)</span><br><span class="line">&#123;</span><br><span class="line">&lt;p&gt;The price is too high.&lt;/p&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@&#123;var price=20;&#125;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">@if (price&gt;30)</span><br><span class="line">&#123;</span><br><span class="line">&lt;p&gt;The price is too high.&lt;/p&gt;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">&lt;p&gt;The price is OK.&lt;/p&gt;</span><br><span class="line">&#125; </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@&#123;var price=25;&#125;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">@if (price&gt;=30)</span><br><span class="line">&#123;</span><br><span class="line">&lt;p&gt;The price is high.&lt;/p&gt;</span><br><span class="line">&#125;</span><br><span class="line">else if (price&gt;20 &amp;&amp; price&lt;30) </span><br><span class="line">&#123;</span><br><span class="line">&lt;p&gt;The price is OK.&lt;/p&gt;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">&lt;p&gt;The price is low.&lt;/p&gt;</span><br><span class="line">&#125; </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@&#123;</span><br><span class="line">var weekday=DateTime.Now.DayOfWeek;</span><br><span class="line">var day=weekday.ToString();</span><br><span class="line">var message=&quot;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">@switch(day)</span><br><span class="line">&#123;</span><br><span class="line">case &quot;Monday&quot;:</span><br><span class="line">message=&quot;This is the first weekday.&quot;;</span><br><span class="line">break;</span><br><span class="line">case &quot;Thursday&quot;:</span><br><span class="line">message=&quot;Only one day before weekend.&quot;;</span><br><span class="line">break;</span><br><span class="line">case &quot;Friday&quot;:</span><br><span class="line">message=&quot;Tomorrow is weekend!&quot;;</span><br><span class="line">break;</span><br><span class="line">default:</span><br><span class="line">message=&quot;Today is &quot; + day;</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;@message&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-CS-Send-Custom-Message" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/01/CS-Send-Custom-Message/" class="article-date">
+      <time datetime="2018-06-01T06:45:25.000Z" itemprop="datePublished">2018-06-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/01/CS-Send-Custom-Message/">C#自定义消息处理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>标签（空格分隔）： C#</p>
+<hr>
+<h2 id="通过SendMessage或postmessage函数发送"><a href="#通过SendMessage或postmessage函数发送" class="headerlink" title="通过SendMessage或postmessage函数发送"></a>通过SendMessage或postmessage函数发送</h2><h3 id="消息定义"><a href="#消息定义" class="headerlink" title="消息定义"></a>消息定义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public const int USER = 0x0400;</span><br><span class="line">public const int WM_TEST =USER+101;</span><br></pre></td></tr></table></figure>
+<h3 id="消息发送"><a href="#消息发送" class="headerlink" title="消息发送"></a>消息发送</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[DllImport(&quot;User32.dll&quot;,EntryPoint=&quot;SendMessage&quot;)]</span><br><span class="line">private static extern int SendMessage(</span><br><span class="line">  IntPtr hWnd,      // 窗体句柄</span><br><span class="line">  uint Msg,         // 消息的标识符</span><br><span class="line">  uint wParam,      // 具体取决于消息</span><br><span class="line">  uint lParam       // 具体取决于消息</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">[DllImport(&quot;User32.dll&quot;,EntryPoint=&quot;PostMessage&quot;)]</span><br><span class="line">private static extern int PostMessage(</span><br><span class="line">  IntPtr hWnd,      // 接收消息的那个窗口的句柄。如设为HWND_BROADCAST，表示投递给系统中的所有顶级窗口。如设为零，表示投递一条线程消息（可参考PostThreadMessage）</span><br><span class="line">  uint Msg,         // 消息的标识符</span><br><span class="line">  uint wParam,      // 具体取决于消息</span><br><span class="line">  uint lParam       // 具体取决于消息</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="消息接收"><a href="#消息接收" class="headerlink" title="消息接收"></a>消息接收</h3><p>Form中是重载DefWinproc函数来处理接收的信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">protected override void DefWndProc(ref Message m)</span><br><span class="line">&#123;</span><br><span class="line">    switch(m.Msg)</span><br><span class="line">    &#123;</span><br><span class="line">        case Message.WM_TEST:   //处理消息</span><br><span class="line">        break;</span><br><span class="line">        default:</span><br><span class="line">        base.DefWndProc(ref m);   //调用基类函数处理非自定义消息。</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用PostThreadMessage函数向线程发送消息"><a href="#使用PostThreadMessage函数向线程发送消息" class="headerlink" title="使用PostThreadMessage函数向线程发送消息"></a>使用PostThreadMessage函数向线程发送消息</h2><h3 id="映射消息结构体原型和自定义消息"><a href="#映射消息结构体原型和自定义消息" class="headerlink" title="映射消息结构体原型和自定义消息"></a>映射消息结构体原型和自定义消息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public struct tagMSG</span><br><span class="line">&#123;</span><br><span class="line">    public int hwnd;</span><br><span class="line">    public uint message;</span><br><span class="line">    public int wParam;</span><br><span class="line">    public long lParam;</span><br><span class="line">    public uint time;</span><br><span class="line">    public int pt;</span><br><span class="line">&#125;</span><br><span class="line">public const int WM_CX_NULL = 0x400 + 100;</span><br></pre></td></tr></table></figure>
+<h3 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[DllImport(&quot;user32.dll&quot;)]</span><br><span class="line">private static extern int PostThreadMessage(</span><br><span class="line">    int threadId,   //线程标识</span><br><span class="line">    uint msg,      //消息标识符</span><br><span class="line">    int wParam,   //具体由消息决定</span><br><span class="line">    int lParam);  //具体由消息决定</span><br></pre></td></tr></table></figure>
+<p>Win32 API无法识别管理线程，你必须发送消息到Windows的线程ID上，而不是管理线程的ID上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[DllImport(&quot;kernel32.dll&quot;)]</span><br><span class="line">private static extern int GetCurrentThreadId();</span><br><span class="line">private int _NewThreadId = GetCurrentThreadId();</span><br><span class="line">PostThreadMessage(_NewThreadId, WM_CX_NULL, 1, 1);</span><br></pre></td></tr></table></figure>
+<h3 id="接收消息"><a href="#接收消息" class="headerlink" title="接收消息"></a>接收消息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[DllImport(&quot;user32.dll&quot;)]</span><br><span class="line">private static extern int GetMessage(</span><br><span class="line">    ref tagMSG lpMsg, //指向MSG结构的指针，该结构从线程的消息队列里接收消息信息;</span><br><span class="line">    int hwnd,//取得其消息的窗口的句柄。这是一个有特殊含义的值（NULL）。GetMessage为任何属于调用线程的窗口检索消息;</span><br><span class="line">    int wMsgFilterMin, //指定被检索的最小消息值的整数</span><br><span class="line">    int wMsgFilterMax); //指定被检索的最大消息值的整数</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/28/hello-world/" class="article-date">
+      <time datetime="2018-05-28T01:05:03.090Z" itemprop="datePublished">2018-05-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/28/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-CS-MVC2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -802,229 +1306,10 @@
 
 
   
-    <article id="post-HP-Socket" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2018/05/18/HP-Socket/" class="article-date">
-      <time datetime="2018-05-18T04:05:14.000Z" itemprop="datePublished">2018-05-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/HP-Socket/">HP-Socket</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>标签（空格分隔）： C++</p>
-<hr>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Hexo2GitHub" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/18/Hexo2GitHub/" class="article-date">
-      <time datetime="2018-05-18T03:55:57.000Z" itemprop="datePublished">2018-05-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/Hexo2GitHub/">Windows下Hexo+GitHub环境搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>标签（空格分隔）： hexo</p>
-<hr>
-<h2 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1. 安装Node.js"></a>1. 安装Node.js</h2><ul>
-<li>下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></li>
-<li>可以通过node -v的命令来测试NodeJS是否安装成功 </li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/1.jpg" alt="Aaron Swartz"></p>
-<h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2. 安装Git"></a>2. 安装Git</h2><ul>
-<li>下载地址：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></li>
-<li>去 Git 官网下载相应版本，进行安装即可</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/2.jpg" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/3.jpg" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/4.jpg" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/5.jpg" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/6.jpg" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/7.jpg" alt="Aaron Swartz"></p>
-<h2 id="3-注册Github账号"><a href="#3-注册Github账号" class="headerlink" title="3. 注册Github账号"></a>3. 注册Github账号</h2><ul>
-<li>去 Github 官网进行注册即可</li>
-<li>注册完之后记得添加 SSH Key</li>
-<li>这个 SSH Key是一个认证，让github识别绑定这台机器，允许这台机器提交</li>
-<li>在Git Bash执行代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email address&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/12.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/13.png" alt="Aaron Swartz"></p>
-<ul>
-<li>成功后会生成两个文件id_rsa 以及id_rsa.pub</li>
-<li><p>添加id_rsa.pub中的内容到Github的SSH Key中</p>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/14.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/15.png" alt="Aaron Swartz"></p>
-</li>
-<li><p>测试SSH Key是否生效,执行下面语句：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T -v git@github.com</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/hexo-github/16.png" alt="Aaron Swartz"></p>
-<h2 id="4-部署到Github上"><a href="#4-部署到Github上" class="headerlink" title="4. 部署到Github上"></a>4. 部署到Github上</h2><h3 id="4-1-编辑本地Hexo目录下文件-comfig-yml"><a href="#4-1-编辑本地Hexo目录下文件-comfig-yml" class="headerlink" title="4.1 编辑本地Hexo目录下文件_comfig.yml"></a>4.1 编辑本地Hexo目录下文件_comfig.yml</h3><ul>
-<li>deploy:</li>
-<li>type: git</li>
-<li>repository: <a href="https://github.com/Lynn1984/Lynn1984.github.io.git" target="_blank" rel="noopener">https://github.com/Lynn1984/Lynn1984.github.io.git</a></li>
-<li>branch: master</li>
-<li>说明：repository复制Github中的即可。仓库名=用户名+github.io 必须的，不然会访问失败。</li>
-</ul>
-<h3 id="4-2-部署命令"><a href="#4-2-部署命令" class="headerlink" title="4.2 部署命令"></a>4.2 部署命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<h3 id="4-3-保存到Github"><a href="#4-3-保存到Github" class="headerlink" title="4.3 保存到Github"></a>4.3 保存到Github</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h2 id="5-hexo源码提交到Github"><a href="#5-hexo源码提交到Github" class="headerlink" title="5. hexo源码提交到Github"></a>5. hexo源码提交到Github</h2><ul>
-<li>master 分支是存放 Hexo 博客生成的页面，所以源码另建一个分支用来存放源码</li>
-<li>实际备份中，.deploy_git、public文件夹和我们的master分支内容重复,可以忽略提交，在.gitignore文件添加如下内容：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>提交本地代码到远程分支BlogCode：<br>如果远程无BlogCode，则会自动创建该分支。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git remote add origin git@github.com:username/username.github.io.git		</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;Blog Code&quot;</span><br><span class="line">$ git push origin master:BlogCode</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/18/hello-world/" class="article-date">
-      <time datetime="2018-05-18T02:59:16.216Z" itemprop="datePublished">2018-05-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

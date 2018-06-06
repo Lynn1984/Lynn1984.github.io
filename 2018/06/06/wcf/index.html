@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Lynn Jiang" />
+
+
+
+<meta name="description" content="标签（空格分隔）： C#  什么是WCF WindowsCommunication Foundation(WCF)是由微软开发的一系列支持数据通信的应用程序框架，可以翻译为Windows 通讯开发平台。 整合了原有的windows通讯的 .net Remoting，WebService，Socket的机制，并融合有Http和Ftp的相关技术。 是Windows平台上开发分布式应用最佳的实践方式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WCF入门教程，即学即会">
+<meta property="og:url" content="http://yoursite.com/2018/06/06/wcf/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="标签（空格分隔）： C#  什么是WCF WindowsCommunication Foundation(WCF)是由微软开发的一系列支持数据通信的应用程序框架，可以翻译为Windows 通讯开发平台。 整合了原有的windows通讯的 .net Remoting，WebService，Socket的机制，并融合有Http和Ftp的相关技术。 是Windows平台上开发分布式应用最佳的实践方式。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/11.png">
+<meta property="og:updated_time" content="2018-06-06T07:28:26.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WCF入门教程，即学即会">
+<meta name="twitter:description" content="标签（空格分隔）： C#  什么是WCF WindowsCommunication Foundation(WCF)是由微软开发的一系列支持数据通信的应用程序框架，可以翻译为Windows 通讯开发平台。 整合了原有的windows通讯的 .net Remoting，WebService，Socket的机制，并融合有Http和Ftp的相关技术。 是Windows平台上开发分布式应用最佳的实践方式。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/1.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>WCF入门教程，即学即会 | Hexo</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Lynn Jiang</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/archives/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/754098067@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Lynn Jiang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Lynn Jiang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/754098067@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-wcf" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/06/wcf/" class="article-date">
+      <time datetime="2018-06-06T05:51:21.000Z" itemprop="datePublished">2018-06-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WCF入门教程，即学即会
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>标签（空格分隔）： C#</p>
+<hr>
+<h2 id="什么是WCF"><a href="#什么是WCF" class="headerlink" title="什么是WCF"></a>什么是WCF</h2><ul>
+<li>WindowsCommunication Foundation(WCF)是由微软开发的一系列支持数据通信的应用程序框架，可以翻译为Windows 通讯开发平台。</li>
+<li>整合了原有的windows通讯的 .net Remoting，WebService，Socket的机制，并融合有Http和Ftp的相关技术。</li>
+<li>是Windows平台上开发分布式应用最佳的实践方式。</li>
+</ul>
+<h2 id="WCF体系架构简介"><a href="#WCF体系架构简介" class="headerlink" title="WCF体系架构简介"></a>WCF体系架构简介</h2><h3 id="契约与说明"><a href="#契约与说明" class="headerlink" title="契约与说明"></a>契约与说明</h3><p>契约定义消息系统的各个方面：</p>
+<ul>
+<li>数据契约：服务中的参数；</li>
+<li>消息契约：使用SOAP协议特定的消息部分；</li>
+<li>服务契约：服务中的方法；</li>
+<li>策略与绑定：策略设置安全或其他条件，绑定指定传输方式与编码。</li>
+</ul>
+<h3 id="服务运行时"><a href="#服务运行时" class="headerlink" title="服务运行时"></a>服务运行时</h3><p>服务运行期间的行为控制</p>
+<ul>
+<li>限制行为：控制处理的消息数；</li>
+<li>错误行为：出现内部错误时所处理的操作；</li>
+<li>元数据行为：是否向外提供元数据及元数据的提供方式；</li>
+<li>实例行为：可运行的服务实例数目；</li>
+<li>事务行为：处理事务；</li>
+<li>调度行为：控制WCF处理消息的方式；</li>
+</ul>
+<h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><ul>
+<li>消息传递层：说明数据的交换格式和传输模式。</li>
+<li>消息传递层由通道（信道）组成，通道是对消息进行处理的组件，负责以一致的方式对消息进行整理和传送。通道用于传输层、协议层、及消息获取。各层次的通道组成了信道栈。</li>
+<li>通道对消息和消息头进行操作，服务运行时对消息正文进行操作。</li>
+<li>两种类型：传输通道 与 协议通道。</li>
+<li>传输通道：读取和写入来自网络的消息，传输通道通过编码器将消息转换为网络传输使用的字节流，以及将字节流转换为消息。传输通道示例如：HTTP通道、命名管道、TCP、MSMQ等；</li>
+<li>协议通道：通过读取或写入消息头的方式来实现消息协议，协议通道示例如：WS-Security，WS-Reliability。</li>
+</ul>
+<h3 id="承载和激活"><a href="#承载和激活" class="headerlink" title="承载和激活"></a>承载和激活</h3><ul>
+<li>服务宿主： 负责WCF服务的生命周期和上下文的操作系统进程，负责启动和停止WCF服务，并提供控制服务的基本管理功能。</li>
+</ul>
+<h2 id="WCF基础概念介绍"><a href="#WCF基础概念介绍" class="headerlink" title="WCF基础概念介绍"></a>WCF基础概念介绍</h2><h3 id="契约（Contract）"><a href="#契约（Contract）" class="headerlink" title="契约（Contract）"></a>契约（Contract）</h3><p>WCF 的基本概念是以合约(Contract)来定义双方沟通的协议，合约必须要以接口的方式来体现，而实际的服务代码必须要由这些合约接口派生并实现。合约分成了四种：</p>
+<ul>
+<li>数据合约 (Data Contract)，订定双方沟通时的数据格式。</li>
+<li>服务合约 (Service Contract)，订定服务的定义。</li>
+<li>操作合约 (Operation Contract)，订定服务提供的方法。</li>
+<li>消息合约 (MessageContract)，订定在通信期间改写消息内容的规范。一个WCF中的合约，就如同下列代码所示：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">using System;  </span><br><span class="line">using System.ServiceModel;  </span><br><span class="line">namespace Microsoft.ServiceModel.Samples&#123;  </span><br><span class="line">  </span><br><span class="line">[ServiceContract(Namespace = &quot;http://Microsoft.ServiceModel.Samples&quot;)]// 服务合约  </span><br><span class="line">public interface ICalculator  </span><br><span class="line">&#123;  </span><br><span class="line">[OperationContract] // 操作合约  </span><br><span class="line">double Add(double n1, double n2);  </span><br><span class="line">  </span><br><span class="line">[OperationContract] // 操作合约  </span><br><span class="line">double Subtract(double n1, double n2);  </span><br><span class="line">  </span><br><span class="line">[OperationContract] // 操作合约  </span><br><span class="line">double Multiply(double n1, double n2);  </span><br><span class="line">  </span><br><span class="line">[OperationContract] // 操作合约  </span><br><span class="line">double Divide(double n1, double n2);  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="绑定-Binding"><a href="#绑定-Binding" class="headerlink" title="绑定 (Binding)"></a>绑定 (Binding)</h3><p>由于 WCF 支持了 HTTP，TCP，Named Pipe，MSMQ，Peer-To-Peer TCP等协议，而 HTTP 又分为基本 HTTP 支持 (BasicHttpBinding)以及WS-HTTP支持(WsHttpBinding)，而 TCP亦支持NetTcpBinding， NetPeerTcpBinding等通信方式，因此，双方必须要统一通信的协议，并且也要在编码以及格式上要有所一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;  </span><br><span class="line">&lt;configuration&gt;  </span><br><span class="line">&lt;system.serviceModel&gt;  </span><br><span class="line">&lt;!-- 设定服务系结的资讯 --&gt;  </span><br><span class="line">&lt;services&gt;  </span><br><span class="line">&lt;service name=&quot; CalculatorService&quot; &gt;  </span><br><span class="line">&lt;endpoint address=&quot;&quot; binding=&quot;wsHttpBinding&quot;bindingConfiguration=&quot;Binding1&quot; contract=&quot;ICalculator&quot;/&gt;  </span><br><span class="line">&lt;/service&gt;  </span><br><span class="line">&lt;/services&gt;  </span><br><span class="line">&lt;!-- 设定通讯协定系结的资讯 --&gt;  </span><br><span class="line">&lt;bindings&gt;  </span><br><span class="line">&lt;wsHttpBinding&gt;  </span><br><span class="line">&lt;binding name=&quot;Binding1&quot;&gt;  </span><br><span class="line">&lt;/binding&gt;  </span><br><span class="line">&lt;/wsHttpBinding&gt;  </span><br><span class="line">&lt;/bindings&gt;  </span><br><span class="line">&lt;/system.serviceModel&gt;  </span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="终结点"><a href="#终结点" class="headerlink" title="终结点"></a>终结点</h3><p>–终结点是用来发送或接收消息（或执行这两种操作）的构造。终结点包括一个定义消息可以发送到的目的地的位置（地址）结点，包括一个定义消息可以发送到的目的地的位置（地址）、一个描述消息应如何发送的通信机制规范（绑定）以及对于可以在该位置发送或接收（或两者皆可）的一组消息的定义（服务协定）—该定义还描述了可以发送何种消息。</p>
+<h3 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h3><p>所谓的“元数据”就是描述数据的数据，即描述当前服务有哪些服务契约、方法契约和数据契约以及终结点的信息。而“元数据终结点”就是向外界暴露元数据的终结点。当客户端添加WCF服务引用的时候，会首先通过元数据取得服务器端的契约信息、终结点信息，然后根据这些信息在客户端创建了代理类，我们在客户端调用WCF服务的过程实际上就是通过代理类调用WCF服务的过程。</p>
+<h2 id="简单的实例"><a href="#简单的实例" class="headerlink" title="简单的实例"></a>简单的实例</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><ul>
+<li>新建立空白解决方案，并在解决方案中新建项目，项目类型为：WCF服务应用程序。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/1.png" alt="Aaron Swartz"></p>
+<ul>
+<li>建立完成后如下图所示：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/2.png" alt="Aaron Swartz"></p>
+<ul>
+<li>添加自定义的WCF服务文件。在项目中添加新项：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/3.png" alt="Aaron Swartz"></p>
+<ul>
+<li>添加代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">namespace WcfServiceDemo</span><br><span class="line">&#123;</span><br><span class="line">    // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码和配置文件中的接口名“IUser”。</span><br><span class="line">    [ServiceContract]</span><br><span class="line">    public interface IUser</span><br><span class="line">    &#123;</span><br><span class="line">        [OperationContract]</span><br><span class="line">        string ShowName(string name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">namespace WcfServiceDemo</span><br><span class="line">&#123;</span><br><span class="line">    // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码、svc 和配置文件中的类名“User”。</span><br><span class="line">    // 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 User.svc 或 User.svc.cs，然后开始调试。</span><br><span class="line">    public class User : IUser</span><br><span class="line">    &#123;</span><br><span class="line">        public string ShowName(string name)</span><br><span class="line">        &#123;</span><br><span class="line">            string wcfName = string.Format(&quot;WCF服务，显示姓名：&#123;0&#125;&quot;, name);</span><br><span class="line">            return wcfName;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>F5运行，双击ShowName方法</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/4.png" alt="Aaron Swartz"></p>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>选择项目，在“生成”下面选“发布”：<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/6.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/7.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/8.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/9.png" alt="Aaron Swartz"></p>
+<h3 id="IIS-部署运行"><a href="#IIS-部署运行" class="headerlink" title="IIS 部署运行"></a>IIS 部署运行</h3><p>右击“我的电脑”，选择“设备”，添加网站如下图：</p>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/5.png" alt="Aaron Swartz"></p>
+<p>访问<a href="http://localhost:777" target="_blank" rel="noopener">http://localhost:777</a></p>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/10.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/wcf/11.png" alt="Aaron Swartz"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/06/06/wcf/">WCF入门教程，即学即会</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Lynn Jiang</a></p>
+        <p><span>发布时间:</span>2018-06-06, 13:51:21</p>
+        <p><span>最后更新:</span>2018-06-06, 15:28:26</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/06/wcf/" title="WCF入门教程，即学即会">http://yoursite.com/2018/06/06/wcf/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/06/06/wcf/　　作者: Lynn Jiang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/06/05/wp/">
+                    wp
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是WCF"><span class="toc-number">1.</span> <span class="toc-text">什么是WCF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WCF体系架构简介"><span class="toc-number">2.</span> <span class="toc-text">WCF体系架构简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#契约与说明"><span class="toc-number">2.1.</span> <span class="toc-text">契约与说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务运行时"><span class="toc-number">2.2.</span> <span class="toc-text">服务运行时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#消息传递"><span class="toc-number">2.3.</span> <span class="toc-text">消息传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#承载和激活"><span class="toc-number">2.4.</span> <span class="toc-text">承载和激活</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WCF基础概念介绍"><span class="toc-number">3.</span> <span class="toc-text">WCF基础概念介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#契约（Contract）"><span class="toc-number">3.1.</span> <span class="toc-text">契约（Contract）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定-Binding"><span class="toc-number">3.2.</span> <span class="toc-text">绑定 (Binding)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终结点"><span class="toc-number">3.3.</span> <span class="toc-text">终结点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元数据"><span class="toc-number">3.4.</span> <span class="toc-text">元数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单的实例"><span class="toc-number">4.</span> <span class="toc-text">简单的实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建项目"><span class="toc-number">4.1.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发布"><span class="toc-number">4.2.</span> <span class="toc-text">发布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IIS-部署运行"><span class="toc-number">4.3.</span> <span class="toc-text">IIS 部署运行</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"WCF入门教程，即学即会　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/06/05/wp/" title="下一篇: wp">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/06/wcf/">WCF入门教程，即学即会</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/wp/">wp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/razor/">SP.NET Razor - 标记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/01/CS-Send-Custom-Message/">C#自定义消息处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/CS-MVC2/">Asp.net MVC模式（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/bower/">Bower的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/gulp/">Gulp JavaScript构建系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/CS-MVC/">Asp.net MVC模式（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/markdown/">Markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/HP-Socket/">HP-Socket</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/Hexo2GitHub/">Windows下Hexo+GitHub环境搭建</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 Lynn Jiang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
