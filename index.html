@@ -248,6 +248,161 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-addModule" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/25/addModule/" class="article-date">
+      <time datetime="2018-06-25T01:32:13.000Z" itemprop="datePublished">2018-06-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/25/addModule/">新增“用餐历史”新菜单</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>标签（空格分隔）： 会员管理系统（仅供内部使用）</p>
+<hr>
+<h2 id="新增“用餐历史”三级菜单"><a href="#新增“用餐历史”三级菜单" class="headerlink" title="新增“用餐历史”三级菜单"></a>新增“用餐历史”三级菜单</h2><ul>
+<li>进入主界面，点击“系统管理”，点击“菜单”，如下图：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/1.png" alt="Aaron Swartz"></p>
+<ul>
+<li>在“菜单”页面树形菜单中选择“会员管理”，再选择“会员”，在该级目录下添加一条“用餐历史”的记录，如下图：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/2.png" alt="Aaron Swartz"></p>
+<h2 id="创建“用餐历史”数据库表"><a href="#创建“用餐历史”数据库表" class="headerlink" title="创建“用餐历史”数据库表"></a>创建“用餐历史”数据库表</h2><ul>
+<li>给每个字段都添加说明</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/5.png" alt="Aaron Swartz"></p>
+<ul>
+<li>创建表成功后，添加表的说明</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/6.png" alt="Aaron Swartz"></p>
+<ul>
+<li>字段说明和表的说明必须要添加，否则自动代码生成器会识别失败，不能自动创建需要的文件</li>
+</ul>
+<h2 id="利用代码生成器，生成基础文件"><a href="#利用代码生成器，生成基础文件" class="headerlink" title="利用代码生成器，生成基础文件"></a>利用代码生成器，生成基础文件</h2><ul>
+<li>MMS\SourceCode\RDFGenerateCode为代码生成器项目，直接运行项目:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/7.png" alt="Aaron Swartz"></p>
+<ul>
+<li>填好需要连接的数据库信息，选择需要生成代码的数据表。下图红框中的数据是自动加载的，则表明数据表 有按原则创建：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/8.png" alt="Aaron Swartz"></p>
+<ul>
+<li>在对应的目录下创建ConsumeHistory目录，拷贝生成的类文件到ConsumeHistory中，如下图：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/9.png" alt="Aaron Swartz"></p>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/10.png" alt="Aaron Swartz"></p>
+<ul>
+<li>把生成的html文件拷贝到UI项目中去，具体看图：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/11.png" alt="Aaron Swartz"></p>
+<h2 id="增加菜单GUID"><a href="#增加菜单GUID" class="headerlink" title="增加菜单GUID"></a>增加菜单GUID</h2><p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/12.png" alt="Aaron Swartz"></p>
+<h2 id="增加权限设置"><a href="#增加权限设置" class="headerlink" title="增加权限设置"></a>增加权限设置</h2><ul>
+<li>给超级管理员增加完整权限</li>
+<li>已经审核的数据不能直接修改，需要反审核后进行修改</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/3.png" alt="Aaron Swartz"></p>
+<h2 id="设置菜单表选项"><a href="#设置菜单表选项" class="headerlink" title="设置菜单表选项"></a>设置菜单表选项</h2><p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/4.png" alt="Aaron Swartz"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-sqlserver" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/23/sqlserver/" class="article-date">
+      <time datetime="2018-06-23T01:35:22.000Z" itemprop="datePublished">2018-06-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/sqlserver/">sqlserver</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-linq" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1077,224 +1232,6 @@
 </li>
 </ul>
 <h3 id="2-通过“管理Bower程序包”管理Bower"><a href="#2-通过“管理Bower程序包”管理Bower" class="headerlink" title="2. 通过“管理Bower程序包”管理Bower"></a>2. 通过“管理Bower程序包”管理Bower</h3><p>右键点击Bower文件，选择“管理Bower程序包”，则可以开始管理Bower包了。如下图所示：<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/bower/1.png" alt="Aaron Swartz"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/24/gulp/" class="article-date">
-      <time datetime="2018-05-24T03:19:24.000Z" itemprop="datePublished">2018-05-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/24/gulp/">Gulp JavaScript构建系统</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>标签（空格分隔）： C#</p>
-<hr>
-<p>在此输入正文</p>
-<h2 id="1-全局安装-gulp："><a href="#1-全局安装-gulp：" class="headerlink" title="1. 全局安装 gulp："></a>1. 全局安装 gulp：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global gulp</span><br></pre></td></tr></table></figure>
-<h2 id="2-作为项目的开发依赖（devDependencies）安装："><a href="#2-作为项目的开发依赖（devDependencies）安装：" class="headerlink" title="2. 作为项目的开发依赖（devDependencies）安装："></a>2. 作为项目的开发依赖（devDependencies）安装：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
-<h2 id="3-在项目根目录下创建一个名为-gulpfile-js-的文件："><a href="#3-在项目根目录下创建一个名为-gulpfile-js-的文件：" class="headerlink" title="3. 在项目根目录下创建一个名为 gulpfile.js 的文件："></a>3. 在项目根目录下创建一个名为 gulpfile.js 的文件：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, function() &#123;</span><br><span class="line">  // 将你的默认的任务代码放在这</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="4-运行-gulp："><a href="#4-运行-gulp：" class="headerlink" title="4. 运行 gulp："></a>4. 运行 gulp：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure>
-<h2 id="5-在Asp-net-Core项目中添加gulp"><a href="#5-在Asp-net-Core项目中添加gulp" class="headerlink" title="5. 在Asp.net Core项目中添加gulp"></a>5. 在Asp.net Core项目中添加gulp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;binding Clean=&apos;clean&apos; /&gt;</span><br><span class="line">&quot;use strict&quot;;</span><br><span class="line"></span><br><span class="line">var gulp = require(&quot;gulp&quot;),</span><br><span class="line">    rimraf = require(&quot;rimraf&quot;),</span><br><span class="line">    concat = require(&quot;gulp-concat&quot;),</span><br><span class="line">    cssmin = require(&quot;gulp-cssmin&quot;),</span><br><span class="line">    uglify = require(&quot;gulp-uglify&quot;);</span><br><span class="line"></span><br><span class="line">var webroot = &quot;./wwwroot/&quot;;</span><br><span class="line"></span><br><span class="line">var paths = &#123;</span><br><span class="line">    js: webroot + &quot;js/**/*.js&quot;,</span><br><span class="line">    minJs: webroot + &quot;js/**/*.min.js&quot;,</span><br><span class="line">    css: webroot + &quot;css/**/*.css&quot;,</span><br><span class="line">    minCss: webroot + &quot;css/**/*.min.css&quot;,</span><br><span class="line">    concatJsDest: webroot + &quot;js/site.min.js&quot;,</span><br><span class="line">    concatCssDest: webroot + &quot;css/site.min.css&quot;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;clean:js&quot;, function (cb) &#123;</span><br><span class="line">    rimraf(paths.concatJsDest, cb);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;clean:css&quot;, function (cb) &#123;</span><br><span class="line">    rimraf(paths.concatCssDest, cb);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;clean&quot;, [&quot;clean:js&quot;, &quot;clean:css&quot;]);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;min:js&quot;, function () &#123;</span><br><span class="line">    return gulp.src([paths.js, &quot;!&quot; + paths.minJs], &#123; base: &quot;.&quot; &#125;)</span><br><span class="line">        .pipe(concat(paths.concatJsDest))</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(&quot;.&quot;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;min:css&quot;, function () &#123;</span><br><span class="line">    return gulp.src([paths.css, &quot;!&quot; + paths.minCss])</span><br><span class="line">        .pipe(concat(paths.concatCssDest))</span><br><span class="line">        .pipe(cssmin())</span><br><span class="line">        .pipe(gulp.dest(&quot;.&quot;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&quot;min&quot;, [&quot;min:js&quot;, &quot;min:css&quot;]);</span><br></pre></td></tr></table></figure>
-<h3 id="6-在Visual-Studio-2015中运行"><a href="#6-在Visual-Studio-2015中运行" class="headerlink" title="6. 在Visual Studio 2015中运行"></a>6. 在Visual Studio 2015中运行</h3><p>右键点击gulp文件，选择“任务运行程序资源管理器”，如下图：<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/gulp/1.png" alt="Aaron Swartz"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-CS-MVC" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/23/CS-MVC/" class="article-date">
-      <time datetime="2018-05-23T06:19:24.000Z" itemprop="datePublished">2018-05-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/23/CS-MVC/">Asp.net MVC模式（一）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>标签（空格分隔）： C#</p>
-<hr>
-<p>ASP.NET 是新一代 ASP 。它与经典 ASP 是不兼容的，但 ASP.NET 可能包括经典 ASP。<br>ASP.NET 页面是经过编译的，这使得它们的运行速度比经典 ASP 快。<br>ASP.NET 具有更好的语言支持，有一大套的用户控件和基于 XML 的组件，并集成了用户身份验证。<br>ASP.NET 页面的扩展名是 .aspx ，通常是用 VB (Visual Basic) 或者 C# (C sharp) 编写。<br>在 ASP.NET 中的控件可以用不同的语言（包括 C++ 和 Java）编写。<br>当浏览器请求 ASP.NET 文件时，ASP.NET 引擎读取文件，编译和执行脚本文件，并将结果以普通的 HTML 页面返回给浏览器。</p>
-<h2 id="1-创建MVC项目"><a href="#1-创建MVC项目" class="headerlink" title="1. 创建MVC项目"></a>1. 创建MVC项目</h2><h3 id="1-1-在-New-Project-对话框中"><a href="#1-1-在-New-Project-对话框中" class="headerlink" title="1.1 在 New Project 对话框中:"></a>1.1 在 New Project 对话框中:</h3><ul>
-<li>打开Visual C#模板</li>
-<li>选择模板 ASP.NET Web Application</li>
-<li>选择MVC模式</li>
-<li>创建MVCDemo项目<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/1.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/5.png" alt="Aaron Swartz"></li>
-</ul>
-<h2 id="2-MVC-文件夹"><a href="#2-MVC-文件夹" class="headerlink" title="2. MVC 文件夹"></a>2. MVC 文件夹</h2><h3 id="2-1-应用程序信息"><a href="#2-1-应用程序信息" class="headerlink" title="2.1 应用程序信息"></a>2.1 应用程序信息</h3><ul>
-<li>Properties</li>
-<li>References</li>
-</ul>
-<h3 id="2-2-应用程序文件夹"><a href="#2-2-应用程序文件夹" class="headerlink" title="2.2 应用程序文件夹"></a>2.2 应用程序文件夹</h3><ul>
-<li>App_Data 文件夹 ：用于存储应用程序数据</li>
-<li>Content 文件夹 ：用于存放静态文件，比如样式表（CSS 文件）、图标和图像</li>
-<li>Controllers 文件夹 ：包含负责处理用户输入和响应的控制器类</li>
-<li>Models 文件夹</li>
-<li>Scripts 文件夹 ：存储应用程序的 JavaScript 文件</li>
-<li>Views 文件夹</li>
-</ul>
-<h3 id="2-3-配置文件"><a href="#2-3-配置文件" class="headerlink" title="2.3 配置文件"></a>2.3 配置文件</h3><ul>
-<li>Global.asax</li>
-<li>packages.config</li>
-<li>Web.config</li>
-</ul>
-<h2 id="3-样式和布局"><a href="#3-样式和布局" class="headerlink" title="3. 样式和布局"></a>3. 样式和布局</h2><h3 id="3-1添加布局"><a href="#3-1添加布局" class="headerlink" title="3.1添加布局"></a>3.1添加布局</h3><pre><code>文件 _Layout.cshtml 表示应用程序中每个页面的布局。它位于 Views 文件夹中的 Shared 文件夹。
-打开文件 _Layout.cshtml，添加自己的布局。
-</code></pre><h3 id="3-2-HTML帮助器"><a href="#3-2-HTML帮助器" class="headerlink" title="3.2 HTML帮助器"></a>3.2 HTML帮助器</h3><p>在上面的代码中，HTML 帮助器用于修改 HTML 输出：<br>@Url.Content() - URL 内容将在此处插入。<br>@Html.ActionLink() - HTML 链接将在此处插入。</p>
-<h3 id="3-3-Razor-语法"><a href="#3-3-Razor-语法" class="headerlink" title="3.3 Razor 语法"></a>3.3 Razor 语法</h3><p>在上面的代码中，红色标记的代码是使用 Razor 标记的 C#。<br>@ViewBag.Title - 页面标题将在此处插入。<br>@RenderBody() - 页面内容将在此处呈现。</p>
-<h3 id="3-4-添加样式"><a href="#3-4-添加样式" class="headerlink" title="3.4 添加样式"></a>3.4 添加样式</h3><p>应用程序的样式表是 Site.css，位于 Content 文件夹中。<br>打开文件 Site.css，把内容替换成自己的样式。</p>
-<h3 id="3-5-ViewStart-文件"><a href="#3-5-ViewStart-文件" class="headerlink" title="3.5 _ViewStart 文件"></a>3.5 _ViewStart 文件</h3><p>Shared 文件夹（位于 Views 文件夹内）中的 _ViewStart 文件包含如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@&#123;Layout = &quot;~/Views/Shared/_Layout.cshtml&quot;;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这段代码被自动添加到由应用程序显示的所有视图。<br>如果您删除了这个文件，则必须向所有视图中添加这行代码。</p>
-<h2 id="4-控制器"><a href="#4-控制器" class="headerlink" title="4. 控制器"></a>4. 控制器</h2><h3 id="4-1-Controllers-文件夹"><a href="#4-1-Controllers-文件夹" class="headerlink" title="4.1 Controllers 文件夹"></a>4.1 Controllers 文件夹</h3><p>MVC 要求所有控制器文件的名称以 “Controller” 结尾。<br>例如：HomeController.cs（用于 Home 页面和 About 页面）和AccountController.cs （用于登录页面）。<br>Web 服务器通常会将进入的 URL 请求直接映射到服务器上的磁盘文件。例如：URL 请求 “<a href="http://www.w3cschool.cc/index.php&quot;" target="_blank" rel="noopener">http://www.w3cschool.cc/index.php&quot;</a> 将直接映射到服务器根目录上的文件 “index.php”。<br>MVC 框架的映射方式有所不同。MVC 将 URL 映射到方法。这些方法在类中被称为”控制器”。<br>控制器负责处理进入的请求，处理输入，保存数据，并把响应发送回客户端。</p>
-<h3 id="4-2-添加控制器"><a href="#4-2-添加控制器" class="headerlink" title="4.2 添加控制器"></a>4.2 添加控制器</h3><p>右键点击Controllers文件夹-》添加——》控制器：<br>名称中必须以Controller结尾，不可以删除修改。<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/4.png" alt="Aaron Swartz"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">namespace MVCDemo.Controllers</span><br><span class="line">&#123;</span><br><span class="line">    public class TestController : Controller</span><br><span class="line">    &#123;</span><br><span class="line">        // GET: Test</span><br><span class="line">        public ActionResult Index()</span><br><span class="line">        &#123;</span><br><span class="line">            return View();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public string GetString()</span><br><span class="line">       &#123;</span><br><span class="line">            return &quot;Welcome to  my home!)&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-3-运行"><a href="#4-3-运行" class="headerlink" title="4.3 运行"></a>4.3 运行</h3><p>按 F5 键，在地址栏中以“Test/GetString”这样的形式输入<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/6.png" alt="Aaron Swartz"></p>
-<h2 id="5-视图"><a href="#5-视图" class="headerlink" title="5.视图"></a>5.视图</h2><h3 id="5-1-Views-文件夹"><a href="#5-1-Views-文件夹" class="headerlink" title="5.1 Views 文件夹"></a>5.1 Views 文件夹</h3><p>Views 文件夹存储的是与应用程序显示（用户界面）相关的文件（HTML 文件）。根据所采用的语言内容，这些文件可能扩展名可能是 html、asp、aspx、cshtml 和 vbhtml。<br>Views 文件夹中包含每个控制器对应的一个文件夹。<br>在 Views 文件夹中，Visual Web Developer 已经创建了一个 Account 文件夹、一个 Home 文件夹、一个 Shared 文件夹。<br>Account 文件夹包含用于用户账号注册和登录的页面。<br>Home 文件夹用于存储诸如 home 页和 about 页之类的应用程序页面。<br>Shared 文件夹用于存储控制器间分享的视图（母版页和布局页）。</p>
-<h3 id="5-2-控制器中返回View"><a href="#5-2-控制器中返回View" class="headerlink" title="5.2 控制器中返回View"></a>5.2 控制器中返回View</h3><ul>
-<li><p>在TestController中添加新的Action</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult GetView()</span><br><span class="line">&#123;</span><br><span class="line">    return View(&quot;MyView&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在代码中右键点击GetView，添加试图，取消选择“使用布局”的复选框，点击添加：<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/7.png" alt="Aaron Swartz"></p>
-</li>
-<li><p>在Views-&gt;Test文件夹下面会生成MyView.cshtml文件,如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@&#123;</span><br><span class="line">    Layout = null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span><br><span class="line">    &lt;title&gt;MyView&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt; </span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将View 放在Shared文件夹中所有的Controller都可用。</p>
-</li>
-</ul>
-<h2 id="6-模型"><a href="#6-模型" class="headerlink" title="6. 模型"></a>6. 模型</h2><h3 id="6-1-在GetView-方法中创建Employee-对象"><a href="#6-1-在GetView-方法中创建Employee-对象" class="headerlink" title="6.1 在GetView 方法中创建Employee 对象"></a>6.1 在GetView 方法中创建Employee 对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Models.Employee employee = new Models.Employee();</span><br><span class="line">employee.FirstName = &quot;Lynn&quot;;</span><br><span class="line">employee.LastName = &quot;Jiang&quot;;</span><br><span class="line">employee.Salary = 30000;</span><br></pre></td></tr></table></figure>
-<h3 id="6-2-展示View"><a href="#6-2-展示View" class="headerlink" title="6.2 展示View"></a>6.2 展示View</h3><ul>
-<li>ViewData展示方式</li>
-</ul>
-<p>Controller代码块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> public ActionResult GetView()</span><br><span class="line">&#123;</span><br><span class="line">     Models.Employee employee = new Models.Employee();</span><br><span class="line">     employee.FirstName = &quot;Lynn&quot;;</span><br><span class="line">     employee.LastName = &quot;Jiang&quot;;</span><br><span class="line">     employee.Salary = 30000;</span><br><span class="line">     ViewData[&quot;Employee&quot;] = employee;</span><br><span class="line">     return View(&quot;MyView&quot;);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-<p>View代码块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt; </span><br><span class="line">    @&#123;</span><br><span class="line">        MVCDemo.Models.Employee employee = (MVCDemo.Models.Employee)</span><br><span class="line">        ViewData[&quot;Employee&quot;];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &lt;b&gt;Employee Details &lt;/b&gt;</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    Employee Name: @employee.FirstName@employee.LastName</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    Employee Salary: @employee.Salary.ToString(&quot;C&quot;)</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>ViewBag展示方式</li>
-</ul>
-<p>Controller代码块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult GetView2()</span><br><span class="line">&#123;</span><br><span class="line">    Models.Employee employee = new Models.Employee();</span><br><span class="line">    employee.FirstName = &quot;Lynn&quot;;</span><br><span class="line">    employee.LastName = &quot;Jiang&quot;;</span><br><span class="line">    employee.Salary = 30000;</span><br><span class="line">    ViewBag.Employee = employee;</span><br><span class="line">    return View(&quot;MyView2&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>View代码块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt; </span><br><span class="line">    @&#123;</span><br><span class="line">        MVCDemo.Models.Employee employee = (MVCDemo.Models.Employee)</span><br><span class="line">        ViewData[&quot;Employee&quot;];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &lt;b&gt;Employee Details &lt;/b&gt;</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    Employee Name: @employee.FirstName@employee.LastName</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    Employee Salary: @employee.Salary.ToString(&quot;C&quot;)</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>强类型View方式</li>
-</ul>
-<p>Controller代码块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult GetView3()</span><br><span class="line">&#123;</span><br><span class="line">    Models.Employee employee = new Models.Employee();</span><br><span class="line">    employee.FirstName = &quot;Lynn&quot;;</span><br><span class="line">    employee.LastName = &quot;Jiang&quot;;</span><br><span class="line">    employee.Salary = 30000;</span><br><span class="line">    return View(&quot;MyView3&quot;, employee);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>View代码块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@model MVCDemo.Models.Employee //放在View的顶部</span><br><span class="line">...</span><br><span class="line">    &lt;div&gt; </span><br><span class="line">        &lt;b&gt;Employee Details &lt;/b&gt;</span><br><span class="line">        &lt;/br &gt;</span><br><span class="line">        Employee Name : @Model.FirstName @Model.LastName</span><br><span class="line">        &lt;/br &gt;</span><br><span class="line">        @if (Model.Salary &gt; 15000)</span><br><span class="line">        &#123;</span><br><span class="line">            &lt;span style=&quot;background-color:yellow&quot;&gt;</span><br><span class="line">                Employee Salary: @Model.Salary.ToString(&quot;C&quot;)</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            &lt;span style=&quot;background-color:green&quot;&gt;</span><br><span class="line">                Employee Name : @Model.FirstName @Model.LastName</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &#125;     </span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="6-3-使用ViewModle的强类型View"><a href="#6-3-使用ViewModle的强类型View" class="headerlink" title="6.3 使用ViewModle的强类型View"></a>6.3 使用ViewModle的强类型View</h3><ul>
-<li>在项目下创建ViewModels文件夹</li>
-<li>在ViewModels文件夹下创建EmployeeViewModel类</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">namespace MVCDemo.ViewModels</span><br><span class="line">&#123;</span><br><span class="line">    public class EmployeeViewModel</span><br><span class="line">    &#123;</span><br><span class="line">        public string EmployeeName &#123; get; set; &#125;</span><br><span class="line">        public string Salary &#123; get; set; &#125;</span><br><span class="line">        public string SalaryColor &#123; get; set; &#125;</span><br><span class="line">        public string UserName &#123; get; set; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Controller GetView4代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult GetView4()</span><br><span class="line">&#123;</span><br><span class="line">    Employee employee = new Employee();</span><br><span class="line">    employee.FirstName = &quot;Lynn&quot;;</span><br><span class="line">    employee.LastName = &quot;Jiang&quot;;</span><br><span class="line">    employee.Salary = 30000;</span><br><span class="line"></span><br><span class="line">    EmployeeViewModel vmEmp = new EmployeeViewModel();</span><br><span class="line">    vmEmp.EmployeeName = employee.FirstName + &quot; &quot; + employee.LastName;</span><br><span class="line">    vmEmp.Salary = employee.Salary.ToString(&quot;C&quot;);</span><br><span class="line">    if (employee.Salary &gt; 15000)</span><br><span class="line">    &#123;</span><br><span class="line">        vmEmp.SalaryColor = &quot;yellow&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        vmEmp.SalaryColor = &quot;green&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return View(&quot;MyView4&quot;, vmEmp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>View中使用ViewModel</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@model MVCDemo.ViewModels.EmployeeViewModel</span><br><span class="line">...</span><br><span class="line">    &lt;div&gt; </span><br><span class="line">        &lt;b&gt;Employee Details &lt;/b&gt;</span><br><span class="line">        &lt;/br &gt;</span><br><span class="line">        Employee Name : @Model.EmployeeName</span><br><span class="line">        &lt;/br &gt;</span><br><span class="line">        &lt;span style=&quot;background-color:@Model.SalaryColor&quot;&gt;</span><br><span class="line">         Employee Salary: @Model.Salary</span><br><span class="line">        &lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="6-4-带有集合的View"><a href="#6-4-带有集合的View" class="headerlink" title="6.4 带有集合的View"></a>6.4 带有集合的View</h3><ul>
-<li>修改EmployeeViewModel 类，删除UserName属性</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">namespace MVCDemo.ViewModels</span><br><span class="line">&#123;</span><br><span class="line">    public class EmployeeViewModel</span><br><span class="line">    &#123;</span><br><span class="line">        public string EmployeeName &#123; get; set; &#125;</span><br><span class="line">        public string Salary &#123; get; set; &#125;</span><br><span class="line">        public string SalaryColor &#123; get; set; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在ViewModels 文件下，创建新类并命名为EmployeeListViewModel</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">namespace MVCDemo.ViewModels</span><br><span class="line">&#123;</span><br><span class="line">    public class EmployeeListViewModel</span><br><span class="line">    &#123;</span><br><span class="line">        public List&lt;EmployeeViewModel&gt; Employees &#123; get; set; &#125;</span><br><span class="line">        public string UserName &#123; get; set; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在ViewModels 文件下，创建新类并命名为EmployeeLayer</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">namespace MVCDemo.ViewModels</span><br><span class="line">&#123;</span><br><span class="line">    public class EmployeeLayer</span><br><span class="line">    &#123;</span><br><span class="line">        public List&lt;Employee&gt; GetEmployees()</span><br><span class="line">        &#123;</span><br><span class="line">            List&lt;Employee&gt; employees = new List&lt;Employee&gt;();</span><br><span class="line">            Employee emp = new Employee();</span><br><span class="line">            emp.FirstName = &quot;Miss&quot;;</span><br><span class="line">            emp.LastName = &quot; Wang&quot;;</span><br><span class="line">            emp.Salary = 14000;</span><br><span class="line">            employees.Add(emp);</span><br><span class="line"></span><br><span class="line">            emp = new Employee();</span><br><span class="line">            emp.FirstName = &quot;Mr&quot;;</span><br><span class="line">            emp.LastName = &quot;White&quot;;</span><br><span class="line">            emp.Salary = 16000;</span><br><span class="line">            employees.Add(emp);</span><br><span class="line"></span><br><span class="line">            emp = new Employee();</span><br><span class="line">            emp.FirstName = &quot;Mrs&quot;;</span><br><span class="line">            emp.LastName = &quot; Liu&quot;;</span><br><span class="line">            emp.Salary = 20000;</span><br><span class="line">            employees.Add(emp);</span><br><span class="line"></span><br><span class="line">            return employees;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在Controller中添加GetView6</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult GetView6()</span><br><span class="line">&#123;</span><br><span class="line">    EmployeeListViewModel employeeListViewModel = new EmployeeListViewModel();</span><br><span class="line"></span><br><span class="line">    EmployeeLayer empBal = new EmployeeLayer();</span><br><span class="line">    List&lt;Employee&gt; employees = empBal.GetEmployees();</span><br><span class="line"></span><br><span class="line">    List&lt;EmployeeViewModel&gt; empViewModels = new List&lt;EmployeeViewModel&gt;();</span><br><span class="line"></span><br><span class="line">    foreach (Employee emp in employees)</span><br><span class="line">    &#123;</span><br><span class="line">        EmployeeViewModel empViewModel = new EmployeeViewModel();</span><br><span class="line">        empViewModel.EmployeeName = emp.FirstName + &quot; &quot; + emp.LastName;</span><br><span class="line">        empViewModel.Salary = emp.Salary.ToString(&quot;C&quot;);</span><br><span class="line">        if (emp.Salary &gt; 15000)</span><br><span class="line">        &#123;</span><br><span class="line">            empViewModel.SalaryColor = &quot;yellow&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            empViewModel.SalaryColor = &quot;green&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        empViewModels.Add(empViewModel);</span><br><span class="line">    &#125;</span><br><span class="line">    employeeListViewModel.Employees = empViewModels;</span><br><span class="line">    employeeListViewModel.UserName = &quot;Admin&quot;;</span><br><span class="line">    return View(&quot;MyView6&quot;, employeeListViewModel);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>展示在View中</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">@using MVCDemo.ViewModels</span><br><span class="line">@model EmployeeListViewModel</span><br><span class="line"></span><br><span class="line">@&#123;</span><br><span class="line">    Layout = null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span><br><span class="line">    &lt;title&gt;MyView&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    Hello @Model.UserName</span><br><span class="line">    &lt;hr /&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;table&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;th&gt;Employee Name&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;Salary&lt;/th&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            @foreach (EmployeeViewModel item in Model.Employees)</span><br><span class="line">            &#123;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;@item.EmployeeName&lt;/td&gt;</span><br><span class="line">                    &lt;td style=&quot;background-color:@item.SalaryColor&quot;&gt;@item.Salary&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/table&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>大家在进行ASP.NET MVC的开发时，还可以借助一些开发工具。ComponentOne Studio ASP.NET MVC 是一款轻量级控件，与Visual Studio无缝集成，完全与MVC6和ASP.NET 5.0兼容，将大幅提高工作效率。</p>
 
       
     </div>
