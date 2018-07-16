@@ -15,15 +15,17 @@
 
 
 
-<meta name="description" content="标签（空格分隔）： 会员管理系统（仅供内部使用）  新增“用餐历史”三级菜单 进入主界面，点击“系统管理”，点击“菜单”，如下图：    在“菜单”页面树形菜单中选择“会员管理”，再选择“会员”，在该级目录下添加一条“用餐历史”的记录，如下图：   创建“用餐历史”数据库表 给每个字段都添加说明    创建表成功后，添加表的说明    字段说明和表的说明必须要添加，否则自动代码生成器会识别失败，不">
+<meta name="description" content="标签（空格分隔）： 会员管理系统（仅供内部使用）  新增“用餐历史”三级菜单 进入主界面，点击“系统管理”，点击“菜单”，如下图：    在“菜单”页面树形菜单中选择“会员管理”，再选择“会员”，在该级目录下添加一条“用餐历史”的记录，如下图：    查找Sys_Menu表中“用餐历史”对应的MenuId    在MenuGuid.cs中把MeunId加入   创建“用餐历史”数据库表 给每个字段">
 <meta property="og:type" content="article">
 <meta property="og:title" content="新增“用餐历史”新菜单">
 <meta property="og:url" content="http://yoursite.com/2018/06/25/addModule/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="标签（空格分隔）： 会员管理系统（仅供内部使用）  新增“用餐历史”三级菜单 进入主界面，点击“系统管理”，点击“菜单”，如下图：    在“菜单”页面树形菜单中选择“会员管理”，再选择“会员”，在该级目录下添加一条“用餐历史”的记录，如下图：   创建“用餐历史”数据库表 给每个字段都添加说明    创建表成功后，添加表的说明    字段说明和表的说明必须要添加，否则自动代码生成器会识别失败，不">
+<meta property="og:description" content="标签（空格分隔）： 会员管理系统（仅供内部使用）  新增“用餐历史”三级菜单 进入主界面，点击“系统管理”，点击“菜单”，如下图：    在“菜单”页面树形菜单中选择“会员管理”，再选择“会员”，在该级目录下添加一条“用餐历史”的记录，如下图：    查找Sys_Menu表中“用餐历史”对应的MenuId    在MenuGuid.cs中把MeunId加入   创建“用餐历史”数据库表 给每个字段">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/15.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/5.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/6.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/7.png">
@@ -34,10 +36,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/12.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/3.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/4.png">
-<meta property="og:updated_time" content="2018-06-25T08:28:48.535Z">
+<meta property="og:updated_time" content="2018-07-16T12:16:47.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新增“用餐历史”新菜单">
-<meta name="twitter:description" content="标签（空格分隔）： 会员管理系统（仅供内部使用）  新增“用餐历史”三级菜单 进入主界面，点击“系统管理”，点击“菜单”，如下图：    在“菜单”页面树形菜单中选择“会员管理”，再选择“会员”，在该级目录下添加一条“用餐历史”的记录，如下图：   创建“用餐历史”数据库表 给每个字段都添加说明    创建表成功后，添加表的说明    字段说明和表的说明必须要添加，否则自动代码生成器会识别失败，不">
+<meta name="twitter:description" content="标签（空格分隔）： 会员管理系统（仅供内部使用）  新增“用餐历史”三级菜单 进入主界面，点击“系统管理”，点击“菜单”，如下图：    在“菜单”页面树形菜单中选择“会员管理”，再选择“会员”，在该级目录下添加一条“用餐历史”的记录，如下图：    查找Sys_Menu表中“用餐历史”对应的MenuId    在MenuGuid.cs中把MeunId加入   创建“用餐历史”数据库表 给每个字段">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -304,6 +306,14 @@
 <li>在“菜单”页面树形菜单中选择“会员管理”，再选择“会员”，在该级目录下添加一条“用餐历史”的记录，如下图：</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/2.png" alt="Aaron Swartz"></p>
+<ul>
+<li>查找Sys_Menu表中“用餐历史”对应的MenuId</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/14.png" alt="Aaron Swartz"></p>
+<ul>
+<li>在MenuGuid.cs中把MeunId加入</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/15.png" alt="Aaron Swartz"></p>
 <h2 id="创建“用餐历史”数据库表"><a href="#创建“用餐历史”数据库表" class="headerlink" title="创建“用餐历史”数据库表"></a>创建“用餐历史”数据库表</h2><ul>
 <li>给每个字段都添加说明</li>
 </ul>
@@ -350,7 +360,7 @@
         <p><span>本文标题:</span><a href="/2018/06/25/addModule/">新增“用餐历史”新菜单</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Lynn Jiang</a></p>
         <p><span>发布时间:</span>2018-06-25, 09:32:13</p>
-        <p><span>最后更新:</span>2018-06-25, 16:28:48</p>
+        <p><span>最后更新:</span>2018-07-16, 20:16:47</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/25/addModule/" title="新增“用餐历史”新菜单">http://yoursite.com/2018/06/25/addModule/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/06/25/addModule/　　作者: Lynn Jiang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -364,6 +374,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/07/04/EntityFrameworkCore/">
+                    Entity Framework Core 1.0 -- Code First
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -436,7 +452,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/07/04/EntityFrameworkCore/" title="上一篇: Entity Framework Core 1.0 -- Code First">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -448,7 +466,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/25/addModule/">新增“用餐历史”新菜单</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/23/sqlserver/">sqlserver</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/07/linq/">使用LINQ操作SQLServer中的数据</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/06/wcf/">WCF入门教程，即学即会</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/wp/">wp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/razor/">ASP.NET Razor - 标记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/01/CS-Send-Custom-Message/">C#自定义消息处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/CS-MVC2/">Asp.net MVC模式（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/bower/">Bower的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/gulp/">Gulp JavaScript构建系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/CS-MVC/">Asp.net MVC模式（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/markdown/">Markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/HP-Socket/">HP-Socket</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/Hexo2GitHub/">Windows下Hexo+GitHub环境搭建</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/EntityFrameworkCore/">Entity Framework Core 1.0 -- Code First</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/25/addModule/">新增“用餐历史”新菜单</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/23/sqlserver/">sqlserver</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/07/linq/">使用LINQ操作SQLServer中的数据</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/06/wcf/">WCF入门教程，即学即会</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/wp/">wp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/05/razor/">ASP.NET Razor - 标记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/01/CS-Send-Custom-Message/">C#自定义消息处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/28/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/CS-MVC2/">Asp.net MVC模式（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/bower/">Bower的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/gulp/">Gulp JavaScript构建系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/CS-MVC/">Asp.net MVC模式（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/markdown/">Markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/HP-Socket/">HP-Socket</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/Hexo2GitHub/">Windows下Hexo+GitHub环境搭建</a></li></ul>
 
 
 
