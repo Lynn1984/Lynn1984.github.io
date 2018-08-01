@@ -248,6 +248,150 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-cms" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/01/cms/" class="article-date">
+      <time datetime="2018-08-01T04:55:08.000Z" itemprop="datePublished">2018-08-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/cms/">cms</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-wx" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/01/wx/" class="article-date">
+      <time datetime="2018-08-01T04:55:08.000Z" itemprop="datePublished">2018-08-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/01/wx/">海迪云会员第三方接入介绍</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>标签（空格分隔）： 海迪云会员系统（仅供内部使用）</p>
+<hr>
+<h1 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h1><ul>
+<li>海迪云会员系统采用微信开放平台中的第三方平台开发模式，即海迪云以作为第三方角色，来为其他广大公众号提供运营服务和行业解决方案。</li>
+<li>其他广大公众号提供者（即海迪云渠道下的门店商户），需要授权给海迪云开放平台，让海迪云开放平台可以对其公众号进行开发操作。</li>
+<li>一般设计的权限有<ul>
+<li>消息管理权限：</li>
+<li>自定义菜单权限</li>
+<li>网页服务权限</li>
+<li>群发与通知权限</li>
+<li>用户管理权限</li>
+<li>微信卡券权限</li>
+</ul>
+</li>
+<li>权限说明详细链接<br>  <a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419318459&amp;lang=zh_CN" target="_blank" rel="noopener">https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419318459&amp;lang=zh_CN</a></li>
+</ul>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>让海迪云的会员系统与微信会员打通，做到共享一个后台，并且海迪云会员系统还可以单独运转。</p>
+<h1 id="公众号授权给海迪云开放平台"><a href="#公众号授权给海迪云开放平台" class="headerlink" title="公众号授权给海迪云开放平台"></a>公众号授权给海迪云开放平台</h1><h2 id="在浏览器中输入http-member-haidiyun-top-wx-Default-aspx链接"><a href="#在浏览器中输入http-member-haidiyun-top-wx-Default-aspx链接" class="headerlink" title="在浏览器中输入http://member.haidiyun.top/wx/Default.aspx链接"></a>在浏览器中输入<a href="http://member.haidiyun.top/wx/Default.aspx链接" target="_blank" rel="noopener">http://member.haidiyun.top/wx/Default.aspx链接</a></h2><ul>
+<li>把该页面的返回链接在微信中发送给公众号的管理员</li>
+<li>请公众号的管理员在微信中打开链接，并且点击”授权“按钮，进行授权</li>
+<li>如下图：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/cms /1.png" alt="Aaron Swartz"></p>
+<h1 id="自定义菜单管理"><a href="#自定义菜单管理" class="headerlink" title="自定义菜单管理"></a>自定义菜单管理</h1><ul>
+<li>在授权的过程中，如果有进行“自定义菜单权限”权限授权，海迪云会员系统就可以在后台完全操作该公众号的自定义菜单了。</li>
+<li>由于有些授权处理的公众号已经有自己的菜单，亦可以让公众号管理员在公众号中手动添加菜单。</li>
+</ul>
+<h2 id="例如“芳园四季”公众号，就需要手动添加菜单，加入海迪云会员链接，就可以接入海迪云的会员系统会员中心功能（该功能会持续完善），操作步骤如下："><a href="#例如“芳园四季”公众号，就需要手动添加菜单，加入海迪云会员链接，就可以接入海迪云的会员系统会员中心功能（该功能会持续完善），操作步骤如下：" class="headerlink" title="例如“芳园四季”公众号，就需要手动添加菜单，加入海迪云会员链接，就可以接入海迪云的会员系统会员中心功能（该功能会持续完善），操作步骤如下："></a>例如“芳园四季”公众号，就需要手动添加菜单，加入海迪云会员链接，就可以接入海迪云的会员系统会员中心功能（该功能会持续完善），操作步骤如下：</h2><ul>
+<li>登录公众号，选择“自定义菜单功能”</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/cms /2.png" alt="Aaron Swartz"></p>
+<ul>
+<li>新增自定义菜单<br>海迪云为“芳园四季”提供的会员中心的地址为：<br><a href="http://member.haidiyun.top/Wx/MemberCenter.aspx?orgId=20" target="_blank" rel="noopener">http://member.haidiyun.top/Wx/MemberCenter.aspx?orgId=20</a><br>该地址在添加自定义菜单时填入。如下图（海迪云为不同的公众号提供的链接均是不同的，上面链接仅供“芳园四季”使用）：<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/cms /3.png" alt="Aaron Swartz"></li>
+</ul>
+<h1 id="文档完善中……"><a href="#文档完善中……" class="headerlink" title="文档完善中……"></a>文档完善中……</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-EntityFrameworkCore" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -380,7 +524,6 @@
 <li>把生成的html文件拷贝到UI项目中去，具体看图：</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/11.png" alt="Aaron Swartz"></p>
-<h2 id="增加菜单GUID"><a href="#增加菜单GUID" class="headerlink" title="增加菜单GUID"></a>增加菜单GUID</h2><p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/member/12.png" alt="Aaron Swartz"></p>
 <h2 id="增加权限设置"><a href="#增加权限设置" class="headerlink" title="增加权限设置"></a>增加权限设置</h2><ul>
 <li>给超级管理员增加完整权限</li>
 <li>已经审核的数据不能直接修改，需要反审核后进行修改</li>
@@ -976,261 +1119,6 @@
 <p>Win32 API无法识别管理线程，你必须发送消息到Windows的线程ID上，而不是管理线程的ID上。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[DllImport(&quot;kernel32.dll&quot;)]</span><br><span class="line">private static extern int GetCurrentThreadId();</span><br><span class="line">private int _NewThreadId = GetCurrentThreadId();</span><br><span class="line">PostThreadMessage(_NewThreadId, WM_CX_NULL, 1, 1);</span><br></pre></td></tr></table></figure>
 <h3 id="接收消息"><a href="#接收消息" class="headerlink" title="接收消息"></a>接收消息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[DllImport(&quot;user32.dll&quot;)]</span><br><span class="line">private static extern int GetMessage(</span><br><span class="line">    ref tagMSG lpMsg, //指向MSG结构的指针，该结构从线程的消息队列里接收消息信息;</span><br><span class="line">    int hwnd,//取得其消息的窗口的句柄。这是一个有特殊含义的值（NULL）。GetMessage为任何属于调用线程的窗口检索消息;</span><br><span class="line">    int wMsgFilterMin, //指定被检索的最小消息值的整数</span><br><span class="line">    int wMsgFilterMax); //指定被检索的最大消息值的整数</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/28/hello-world/" class="article-date">
-      <time datetime="2018-05-28T01:05:03.090Z" itemprop="datePublished">2018-05-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/28/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-CS-MVC2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/25/CS-MVC2/" class="article-date">
-      <time datetime="2018-05-25T09:38:56.000Z" itemprop="datePublished">2018-05-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/25/CS-MVC2/">Asp.net MVC模式（二）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>标签（空格分隔）： C#</p>
-<hr>
-<h2 id="1-数据访问层"><a href="#1-数据访问层" class="headerlink" title="1. 数据访问层"></a>1. 数据访问层</h2><p>使用SQL Server和EF（Entity Framework）创建相关的数据库及数据库访问层。</p>
-<h3 id="1-1-简述实体框架（EF）"><a href="#1-1-简述实体框架（EF）" class="headerlink" title="1.1 简述实体框架（EF）"></a>1.1 简述实体框架（EF）</h3><p>EF是一种ORM工具，ORM表示对象关联映射。<br>在RDMS中，对象称为表格和列对象，而在.net中（面向对象）称为类，对象以及属性。<br>任何数据驱动的应用实现的方式有两种：</p>
-<ul>
-<li>通过代码与数据库关联（称为数据访问层或数据逻辑层）</li>
-<li>通过编写代码将数据库数据映射到面向对象数据，或反向操作。<br>ORM是一种能够自动完成这两种方式的工具。EF是微软的ORM工具。</li>
-</ul>
-<h3 id="1-2-EF的三种方式来实现项目"><a href="#1-2-EF的三种方式来实现项目" class="headerlink" title="1.2 EF的三种方式来实现项目"></a>1.2 EF的三种方式来实现项目</h3><ul>
-<li>数据库优先方法——创建数据库，包含表，列以及表之间的关系等，EF会根据数据库生成相应的Model类（业务实体）及数据访问层代码。</li>
-<li>模型优先方法——模型优先指模型类及模型之间的关系是由Model设计人员在VS中手动生成和设计的，EF将模型生成数据访问层和数据库。</li>
-<li>代码优先方法——代码优先指手动创建POCO类。这些类之间的关系使用代码定义。当应用程序首次执行时，EF将在数据库服务器中自动生成数据访问层以及相应的数据库。</li>
-</ul>
-<h3 id="1-3-POCO类"><a href="#1-3-POCO类" class="headerlink" title="1.3 POCO类"></a>1.3 POCO类</h3><p>POCO即Plain Old CLR对象，POCO类就是已经创建的简单.Net类。在上两节的实例中，Employee类就是一个简单的POCO类。</p>
-<h2 id="2-数据传递使用数据库"><a href="#2-数据传递使用数据库" class="headerlink" title="2. 数据传递使用数据库"></a>2. 数据传递使用数据库</h2><h3 id="2-1-创建数据库"><a href="#2-1-创建数据库" class="headerlink" title="2.1 创建数据库"></a>2.1 创建数据库</h3><p>连接SQL SERVER ,创建数据库 “MVCDemoDB”。<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/8.png" alt="Aaron Swartz"></p>
-<h3 id="2-2-创建连接字符串（ConnectionString）"><a href="#2-2-创建连接字符串（ConnectionString）" class="headerlink" title="2.2 创建连接字符串（ConnectionString）"></a>2.2 创建连接字符串（ConnectionString）</h3><p>打开Web.Config 文件，在&lt; Configuration &gt;标签内添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;add connectionString=&quot;Data Source=.;Initial Catalog=MVCDemoDB;User ID=sa;Password=123456&quot; name=&quot;MVCDemoDAL&quot; providerName=&quot;System.Data.SqlClient&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-添加EF引用"><a href="#2-3-添加EF引用" class="headerlink" title="2.3 添加EF引用"></a>2.3 添加EF引用</h3><p>右击项目-&gt;管理Nuget 包。选择Entity Framework 并点击安装。</p>
-<h3 id="2-4-创建数据访问层"><a href="#2-4-创建数据访问层" class="headerlink" title="2.4 创建数据访问层"></a>2.4 创建数据访问层</h3><ul>
-<li>在根目录下，新建文件夹”DataAccessLayer“，并在DataAccessLayer文件夹中新建类” MVCDemoDAL “</li>
-<li>在类文件顶部添加 Using System.Data.Entity代码。</li>
-<li>继承DbContext类</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">namespace MVCDemo.DataAccessLayer</span><br><span class="line">&#123;</span><br><span class="line">    public class MVCDemoDAL: DbContext</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-5-创建Employee类的主键"><a href="#2-5-创建Employee类的主键" class="headerlink" title="2.5 创建Employee类的主键"></a>2.5 创建Employee类的主键</h3><p>打开Employee类，输入using语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Web;</span><br><span class="line">using System.ComponentModel.DataAnnotations;</span><br><span class="line"></span><br><span class="line">namespace MVCDemo.Models</span><br><span class="line">&#123;</span><br><span class="line">    public class Employee</span><br><span class="line">    &#123;</span><br><span class="line">        [Key]</span><br><span class="line">        public string FirstName &#123; get; set; &#125;</span><br><span class="line">        public string LastName &#123; get; set; &#125;</span><br><span class="line">        public int Salary &#123; get; set; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-6-定义映射关系"><a href="#2-6-定义映射关系" class="headerlink" title="2.6 定义映射关系"></a>2.6 定义映射关系</h3><p>修改MVCDemoDAL类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Data.Entity;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Web;</span><br><span class="line"></span><br><span class="line">namespace MVCDemo.DataAccessLayer</span><br><span class="line">&#123;</span><br><span class="line">    public class MVCDemoDAL: DbContext</span><br><span class="line">    &#123;</span><br><span class="line">        protected override void OnModelCreating(DbModelBuilder modelBuilder)</span><br><span class="line">        &#123;</span><br><span class="line">            modelBuilder.Entity&lt;Employee&gt;().ToTable(&quot;TblEmployee&quot;);</span><br><span class="line">            base.OnModelCreating(modelBuilder);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：上述代码中提到“TblEmployee”是表名称，是运行时自动生成的。</p>
-<h3 id="2-7-在数据库中添加新属性Employee"><a href="#2-7-在数据库中添加新属性Employee" class="headerlink" title="2.7 在数据库中添加新属性Employee"></a>2.7 在数据库中添加新属性Employee</h3><p>在 MVCDemoDAL 类中添加新属性 Employee。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public DbSet&lt;Employee&gt; Employees &#123; get; set; &#125;</span><br></pre></td></tr></table></figure>
-<p>DbSet表示数据库中能够被查询的所有Employee</p>
-<h3 id="2-8-改变业务层代码，并从数据库中获取数据"><a href="#2-8-改变业务层代码，并从数据库中获取数据" class="headerlink" title="2.8 改变业务层代码，并从数据库中获取数据"></a>2.8 改变业务层代码，并从数据库中获取数据</h3><p>修改EmployeeLayer类，添加GetAllEmployees方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;Employee&gt; GetAllEmployees()</span><br><span class="line">&#123;</span><br><span class="line">    MVCDemoDAL dal = new MVCDemoDAL();</span><br><span class="line">    return dal.Employees.ToList();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-9-插入测试数据"><a href="#2-9-插入测试数据" class="headerlink" title="2.9 插入测试数据"></a>2.9 插入测试数据</h3><p>插入数据：</p>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/9.png" alt="Aaron Swartz"></p>
-<p>运行效果：</p>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/10.png" alt="Aaron Swartz"></p>
-<h2 id="3-数据集"><a href="#3-数据集" class="headerlink" title="3. 数据集"></a>3. 数据集</h2><ul>
-<li>DbSet数据集是数据库方面的概念 ，指数据库中可以查询的实体的集合。</li>
-<li>当执行Linq 查询时，Dbset对象能够将查询内部转换，并触发数据库。</li>
-</ul>
-<h2 id="4-连接数据访问层和数据库"><a href="#4-连接数据访问层和数据库" class="headerlink" title="4. 连接数据访问层和数据库"></a>4. 连接数据访问层和数据库</h2><p>数据访问层和数据库之间的映射通过名称实现的，一般ConnectionString（连接字符串）的名称和数据访问层的类名称是相同的，都是MVCDemoDAL，因此会自动实现映射。<br>如果需要修改连接字符串的名称，则需要使用下面的方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public MVCDemoDAL():base(&quot;NewName&quot;)&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="5-创建数据入口（Data-Entry-Screen）"><a href="#5-创建数据入口（Data-Entry-Screen）" class="headerlink" title="5. 创建数据入口（Data Entry Screen）"></a>5. 创建数据入口（Data Entry Screen）</h2><ul>
-<li>在TestController中新建 “AddNew”action 方法：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult addNew()</span><br><span class="line">&#123;</span><br><span class="line">    return View(&quot;CreateEmployee&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在View文件夹中的MyView6.cshtml文件中加入addNew action的入口：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href =&quot;/Test/AddNew&quot;&gt; Add New &lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/11.png" alt="Aaron Swartz"></p>
-<ul>
-<li>View文件夹中的CreateEmployee.cshtml文件：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@&#123;</span><br><span class="line">    Layout = null;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span><br><span class="line">    &lt;title&gt;CreateEmployee&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;form action=&quot;/Test/SaveEmployee&quot; method=&quot;post&quot;&gt;</span><br><span class="line">            First Name: &lt;input type=&quot;text&quot; id=&quot;TxtFName&quot; name=&quot;FirstName&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            Last Name: &lt;input type=&quot;text&quot; id=&quot;TxtLName&quot; name=&quot;LastName&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            Salary: &lt;input type=&quot;text&quot; id=&quot;TxtSalary&quot; name=&quot;Salary&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; name=&quot;BtnSave&quot; value=&quot;Save Employee&quot; /&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; name=&quot;BtnReset&quot; value=&quot;Reset&quot; /&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/12.png" alt="Aaron Swartz"></p>
-<h2 id="6-Form-标签"><a href="#6-Form-标签" class="headerlink" title="6. Form 标签"></a>6. Form 标签</h2><p>Form标签是HTML中产生请求的一种方式，Form标签内部的提交按钮只要一被点击，请求会被发送到相关的action 属性。</p>
-<p>方法属性决定了请求类型。有四种请求类型：get，post，put以及delete.</p>
-<ul>
-<li>Get： 当需要获取数据时使用。</li>
-<li>Post： 当需要新建一些事物时使用。</li>
-<li>Put: 当需要更新数据时使用。</li>
-<li>Delete：需要删除数据时使用。</li>
-</ul>
-<p>当请求类型是Get，Put或Delete时，值会通过查询语句发送，当请求是Post类型，值会通过Post数据传送。<br>所有输入控件的值将随着请求一起发送。同一时间可能会接收到多个值，为了区分发送到所有值为每个值附加一个Key，这个Key在这里就是名称属性。<br>提交按钮在给服务器发送请求而专门使用的，而简单的按钮是执行一些自定义的客户端行为而使用的。按钮不会自己做任何事情。</p>
-<h2 id="7-在服务器端（或Controller）获取Post数据"><a href="#7-在服务器端（或Controller）获取Post数据" class="headerlink" title="7. 在服务器端（或Controller）获取Post数据"></a>7. 在服务器端（或Controller）获取Post数据</h2><h3 id="7-1-创建SaveEmployee-action方法"><a href="#7-1-创建SaveEmployee-action方法" class="headerlink" title="7.1 创建SaveEmployee action方法"></a>7.1 创建SaveEmployee action方法</h3><p>在Test控制器中创建 名为 ”SaveEmployee“ action 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public string SaveEmployee(Employee e)</span><br><span class="line">&#123;</span><br><span class="line">    return e.FirstName + &quot;|&quot; + e.LastName + &quot;|&quot; + e.Salary;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/13.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/14.png" alt="Aaron Swartz"></p>
-<h3 id="7-2-增加重置按钮和取消按钮"><a href="#7-2-增加重置按钮和取消按钮" class="headerlink" title="7.2 增加重置按钮和取消按钮"></a>7.2 增加重置按钮和取消按钮</h3><ul>
-<li>View界面代码：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@&#123;</span><br><span class="line">    Layout = null;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span><br><span class="line">    &lt;title&gt;CreateEmployee&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        function ResetForm() &#123;</span><br><span class="line">            document.getElementById(&apos;TxtFName&apos;).value = &quot;&quot;;</span><br><span class="line">            document.getElementById(&apos;TxtLName&apos;).value = &quot;&quot;;</span><br><span class="line">            document.getElementById(&apos;TxtSalary&apos;).value = &quot;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;form action=&quot;/Test/SaveEmployee&quot; method=&quot;post&quot;&gt;</span><br><span class="line">            First Name: &lt;input type=&quot;text&quot; id=&quot;TxtFName&quot; name=&quot;FirstName&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            Last Name: &lt;input type=&quot;text&quot; id=&quot;TxtLName&quot; name=&quot;LastName&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            Salary: &lt;input type=&quot;text&quot; id=&quot;TxtSalary&quot; name=&quot;Salary&quot; value=&quot;&quot; /&gt;&lt;br /&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; name=&quot;BtnSubmit&quot; value=&quot;Save Employee&quot; /&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; name=&quot;BtnReset&quot; value=&quot;Reset&quot; onclick=&quot;ResetForm();&quot; /&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; name=&quot;BtnSubmit&quot; value=&quot;Cancel&quot; /&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>TestController 代码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult SaveEmployee(Employee e, string BtnSubmit)</span><br><span class="line">&#123;</span><br><span class="line">    switch (BtnSubmit)</span><br><span class="line">    &#123;</span><br><span class="line">        case &quot;Save Employee&quot;:</span><br><span class="line">            return Content(e.FirstName + &quot;|&quot; + e.LastName + &quot;|&quot; + e.Salary);</span><br><span class="line">        case &quot;Cancel&quot;:</span><br><span class="line">            return RedirectToAction(&quot;GetView6&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return new EmptyResult();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>运行<a href="http://yourAddress/Test/GetView6，点击AddNew，Save" target="_blank" rel="noopener">http://yourAddress/Test/GetView6，点击AddNew，Save</a> Employee和Cancel按钮，测试相应的功能</li>
-</ul>
-<h3 id="7-3-实现多重提交按钮的其他方法"><a href="#7-3-实现多重提交按钮的其他方法" class="headerlink" title="7.3 实现多重提交按钮的其他方法"></a>7.3 实现多重提交按钮的其他方法</h3><ul>
-<li>隐藏 Form 元素</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/Employee/CancelSave&quot; id=&quot;CancelForm&quot; method=&quot;get&quot; style=&quot;display:none&quot;&gt; </span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; name=&quot;BtnSubmit&quot; value=&quot;Cancel&quot; onclick=&quot;document.getElementById(&apos;CancelForm&apos;).submit()&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>使用JavaScript 动态的修改URL</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;&quot; method=&quot;post&quot; id=&quot;EmployeeForm&quot; &gt;</span><br><span class="line">&lt;input type=&quot;submit&quot; name=&quot;BtnSubmit&quot; value=&quot;Save Employee&quot; onclick=&quot;document.getElementById(&apos;EmployeeForm&apos;).action = &apos;/Employee/SaveEmployee&apos;&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot; name=&quot;BtnSubmit&quot; value=&quot;Cancel&quot; onclick=&quot;document.getElementById(&apos;EmployeeForm&apos;).action = &apos;/Employee/CancelSave&apos;&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Ajax<br>使用常规输入按钮来代替提交按钮，并且点击时使用jQuery或任何其他库来产生纯Ajax请求。</li>
-</ul>
-<h2 id="8-保存数据库记录，更新表格"><a href="#8-保存数据库记录，更新表格" class="headerlink" title="8. 保存数据库记录，更新表格"></a>8. 保存数据库记录，更新表格</h2><ul>
-<li>在EmployeeLayer  中创建 SaveEmployee，如下：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public Employee SaveEmployee(Employee e)</span><br><span class="line">&#123;</span><br><span class="line">    MVCDemoDAL dal = new MVCDemoDAL();</span><br><span class="line">    dal.Employees.Add(e);</span><br><span class="line">    dal.SaveChanges();</span><br><span class="line">    return e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>TestController修改</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult SaveEmployee(Employee e, string BtnSubmit)</span><br><span class="line">&#123;</span><br><span class="line">    switch (BtnSubmit)</span><br><span class="line">    &#123;</span><br><span class="line">        case &quot;Save Employee&quot;:</span><br><span class="line">            EmployeeLayer empBal = new EmployeeLayer();</span><br><span class="line">            empBal.SaveEmployee(e);</span><br><span class="line">            return RedirectToAction(&quot;Index&quot;);</span><br><span class="line">        case &quot;Cancel&quot;:</span><br><span class="line">            return RedirectToAction(&quot;Index&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return new EmptyResult();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>运行<br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/15.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/15.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/17.png" alt="Aaron Swartz"></li>
-</ul>
-<h2 id="9-添加服务器端验证"><a href="#9-添加服务器端验证" class="headerlink" title="9. 添加服务器端验证"></a>9. 添加服务器端验证</h2><h3 id="9-1-Model-Binder"><a href="#9-1-Model-Binder" class="headerlink" title="9.1 Model Binder"></a>9.1 Model Binder</h3><p>当Action方法包含元类型参数，Model Binder会与参数名称对比。</p>
-<ul>
-<li>当匹配成功时，响应接收的数据会被分配给参数</li>
-<li>匹配不成功时，参数会设置为缺省值，例如，如果是字符串类型则被设置为null，如果是整型则设置为0</li>
-<li>由于数据类型未匹配异常的抛出，不会进行值分配</li>
-</ul>
-<p>当参数为类，Model Binder将通过检索类所有的属性，将接收的数据与类属性名称比较。<br>当匹配成功时：</p>
-<ul>
-<li>如果接收的值是空，则会将空值分配给属性，如果无法执行空值分配，会设置缺省值，ModelState.IsValid将设置为fasle</li>
-<li>如果空值分配成功，会考虑值是否合法，ModelState.IsValid将设置为fasle</li>
-<li>如果匹配不成功，参数会被设置为缺省值。在本实验中ModelState.IsValid不会受影响</li>
-</ul>
-<h2 id="9-2-使用-DataAnnotations-装饰属性"><a href="#9-2-使用-DataAnnotations-装饰属性" class="headerlink" title="9.2  使用 DataAnnotations 装饰属性"></a>9.2  使用 DataAnnotations 装饰属性</h2><ul>
-<li>修改Employee类</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Employee</span><br><span class="line">&#123;</span><br><span class="line">    [Key]</span><br><span class="line">    [Required(ErrorMessage = &quot;Please enter First Name:&quot;)]</span><br><span class="line">    public string FirstName &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">    [StringLength(5, ErrorMessage = &quot;Last Name length should not be greater than 20&quot;)]</span><br><span class="line">    public string LastName &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">    public int Salary &#123; get; set; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>修改TestController中的SaveEmployee方法</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public ActionResult SaveEmployee(Employee e, string BtnSubmit)</span><br><span class="line">&#123;</span><br><span class="line">    switch (BtnSubmit)</span><br><span class="line">    &#123;</span><br><span class="line">        case &quot;Save Employee&quot;:</span><br><span class="line">            if (ModelState.IsValid)</span><br><span class="line">            &#123; </span><br><span class="line">                EmployeeLayer empBal = new EmployeeLayer();</span><br><span class="line">                empBal.SaveEmployee(e);</span><br><span class="line">            &#125; </span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                return View(&quot;CreateEmployee&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            return RedirectToAction(&quot;GetView6&quot;);</span><br><span class="line">        case &quot;Cancel&quot;:</span><br><span class="line">            return RedirectToAction(&quot;GetView6&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return new EmptyResult();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>修改CreateEmployee.cshtml</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/Test/SaveEmployee&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">                First Name:</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">                &lt;input type=&quot;text&quot; id=&quot;TxtFName&quot; name=&quot;FirstName&quot; value=&quot;&quot; /&gt;</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td colspan=&quot;2&quot; align=&quot;right&quot;&gt;</span><br><span class="line">                @Html.ValidationMessage(&quot;FirstName&quot;)</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">                Last Name:</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">                &lt;input type=&quot;text&quot; id=&quot;TxtLName&quot; name=&quot;LastName&quot; value=&quot;&quot; /&gt;</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td colspan=&quot;2&quot; align=&quot;right&quot;&gt;</span><br><span class="line">                @Html.ValidationMessage(&quot;LastName&quot;)</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">                Salary:</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">                &lt;input type=&quot;text&quot; id=&quot;TxtSalary&quot; name=&quot;Salary&quot; value=&quot;&quot; /&gt;</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td colspan=&quot;2&quot; align=&quot;right&quot;&gt;</span><br><span class="line">                @Html.ValidationMessage(&quot;Salary&quot;)</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td colspan=&quot;2&quot;&gt;</span><br><span class="line">                &lt;input type=&quot;submit&quot; name=&quot;BtnSubmit&quot; value=&quot;Save Employee&quot; /&gt;</span><br><span class="line">                &lt;input type=&quot;submit&quot; name=&quot;BtnSubmit&quot; value=&quot;Cancel&quot; /&gt;</span><br><span class="line">                &lt;input type=&quot;button&quot; name=&quot;BtnReset&quot; value=&quot;Reset&quot; onclick=&quot;ResetForm();&quot; /&gt;</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>运行</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/19.png" alt="Aaron Swartz"><br><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/20.png" alt="Aaron Swartz"></p>
-<ul>
-<li>遇到的问题<br>“System.InvalidOperationException”类型的异常在 EntityFramework.dll 中发生，但未在用户代码中进行处理<br>其他信息: 支持“MVCDemoDAL”上下文的模型已在数据库创建后发生更改。请考虑使用 Code First 迁移更新数据库(<a href="http://go.microsoft.com/fwlink/?LinkId=238269)。" target="_blank" rel="noopener">http://go.microsoft.com/fwlink/?LinkId=238269)。</a></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/Lynn1984/Lynn1984.github.io/master/image/CS/18.png" alt="Aaron Swartz"></p>
-<p>解决方法，在Global.asax文件中在 Application_Start后添加以下语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Database.SetInitializer(new DropCreateDatabaseIfModelChanges&lt;MVCDemoDAL&gt;());</span><br></pre></td></tr></table></figure>
       
     </div>
     
